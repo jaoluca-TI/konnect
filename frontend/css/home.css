@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --neon-blue: #5b63f6;
+    --cool-gray: #7e88b3;
+    --anti-flash-white: #f5f7fa;
+    --charcoal: #2c3e50;
+    --turquesa: #3dd5c0;
+    --preto: #000;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: var(--anti-flash-white);
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 70px;
+    background: var(--neon-blue);
+    color: var(--branco-suave);
+    font-family: 'Poppins', sans-serif;
+}
+
+header h1{
+    color: var(--anti-flash-white);
+    font-size: 30px;
+}
+
+nav a{
+    margin: 10px;
+    text-decoration: none;
+    color: var(--anti-flash-white);
+    font-size: 18px;
+    padding: 10px 25px;
+    border-radius: 10px;
+}
+
+nav a:hover{
+    color:var(--cool-gray);
+}
+
+.botoes{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.botoes button{
+    width: 120px;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    background: var(--anti-flash-white);
+    border: 1px solid var(--cinza-azulado);
+    border-radius: 10px;
+    color: var(--branco-suave);
+    cursor: pointer;
+}
+
+.botoes button:hover{
+    color: var(--cool-gray);
+}
+
+.botoes button i{
+    margin-right: 5px;
+    font-size: 18px;
+    align-items: center;
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    margin: 70px 0px;
+}
+
+.section h2{
+    font-family: 'Poppins', sans-serif;
+}
+
+.apresentacao{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid black;
+    background: var(--cinza-azulado);
+    color: var(--branco-suave);
+    padding: 80px;
+    margin: 0px 80px;
+    border-radius: 10px;
+}
+
+.apresentacao p{
+    width: 80%;
+}
+
+.comecar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.botao-comecar{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.botao-comecar button{
+    width: 250px;   
+    padding: 15px;
+    border-radius: 15px;
+    background: var(--neon-blue);
+    color: var(--anti-flash-white);
+    font-weight: bold;
+    border: 1px solid var(--cool-gray);
+    cursor: pointer;
+
+}
+
+.botao-comecar button:hover{
+    text-transform: uppercase;
+
+
+}
+
