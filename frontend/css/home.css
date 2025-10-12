@@ -12,11 +12,12 @@
     --charcoal: #2c3e50;
     --turquesa: #3dd5c0;
     --preto: #000;
+    --maneira: #D6EFFF;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  background: var(--anti-flash-white);
+  font-family: 'poppins', sans-serif;
+  background: rgb(28, 28, 31);
 }
 
 header{
@@ -24,27 +25,28 @@ header{
     align-items: center;
     justify-content: space-between;
     padding: 15px 70px;
-    background: var(--neon-blue);
-    color: var(--branco-suave);
+    background: #E3F9E5;
+    color: var(--preto);
     font-family: 'Poppins', sans-serif;
 }
 
 header h1{
-    color: var(--anti-flash-white);
+    color: #8c24ff;
     font-size: 30px;
 }
 
 nav a{
     margin: 10px;
     text-decoration: none;
-    color: var(--anti-flash-white);
+    color: #7B3FE4 ;
     font-size: 18px;
-    padding: 10px 25px;
+    padding: 10px;
     border-radius: 10px;
 }
 
 nav a:hover{
-    color:var(--cool-gray);
+    background: rgba(108, 58, 224, 0.3);
+    transition: all 0.3s ease-in-out;
 }
 
 .botoes{
@@ -54,19 +56,22 @@ nav a:hover{
 }
 
 .botoes button{
-    width: 120px;
+    width: 100px;
     padding: 5px 10px;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
-    background: var(--anti-flash-white);
-    border: 1px solid var(--cinza-azulado);
+    background: #7B3FE4;
+    border: none;
     border-radius: 10px;
-    color: var(--branco-suave);
+    color: #E3F9E5;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
 .botoes button:hover{
-    color: var(--cool-gray);
+    background: #6C3AE0;
+    transform: scale(1.02);
+    transition: all 0.3s ease-in-out;
 }
 
 .botoes button i{
@@ -83,26 +88,36 @@ nav a:hover{
     text-align: center;
     gap: 30px;
     margin: 70px 0px;
+    color: #2c3e50;
 }
 
-.section h2{
-    font-family: 'Poppins', sans-serif;
+.section h1{
+    color:#8c24ff;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.section p{
+    font-size: 20px;
+    color: var(--maneira);
 }
 
 .apresentacao{
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    text-align: center;
-    border: 1px solid black;
-    background: var(--cinza-azulado);
-    color: var(--branco-suave);
+    gap: 30px;
+    text-align: justify;
     padding: 80px;
-    margin: 0px 80px;
-    border-radius: 10px;
+    width: 60%;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .apresentacao p{
-    width: 80%;
+    width: 100%;
+    font-size: 20px;
 }
 
 .comecar{
@@ -113,27 +128,76 @@ nav a:hover{
     gap: 30px;
 }
 
+.comecar h2{
+    font-size: 35px;
+    color: #8c24ff;
+}
+
 .botao-comecar{
     display: flex;
+    text-align: center;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    gap: 50px;
 }
 
 .botao-comecar button{
-    width: 250px;   
-    padding: 15px;
+    width: 250px;  
+    padding: 20px 15px;
     border-radius: 15px;
-    background: var(--neon-blue);
-    color: var(--anti-flash-white);
-    font-weight: bold;
-    border: 1px solid var(--cool-gray);
+    background: #7B3FE4;
+    color: #E3F9E5;
+    font-size: 17px;
+    border: 1px solid rgb(28, 28, 31);
     cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease-in-out;
+}
 
+.botao-comecar i{
+    margin-right: 20px;
+    font-size: 17px;
 }
 
 .botao-comecar button:hover{
-    text-transform: uppercase;
-
+    transform: scale(1.03); 
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    background: #6C3AE0;
 
 }
 
+.botao-comecar span{
+    color: #E3F9E5;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    padding: 15px 70px;
+    margin-top: 140px;
+    background: #E3F9E5;
+    color: #8c24ff;
+    
+}
+
+footer h2{
+    font-size: 25px;
+}
+
+footer span{
+    font-size: 15px;
+}
+
+
+
+@keyframes fade{
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.fade-in{
+    animation: fade 1s ease-out;
+}
