@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/frontend/css/criarProjeto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <h1 class="fade-in">ideaHub</h1>
+        <nav class="nav fade-in">
+            <a href="/frontend/html/home.html">Home</a>
+            <a href="/frontend/html/projetos.html">Projetos</a>
+        </nav>
+        <div class="botoes fade-in">
+            <button>Login</button>
+        </div>
+    </header>
+
+    <div class="container fade-in">
+        <div class="conteudo-container fade-in">
+            <h1>Criar Novo Projeto</h1>
+            <p>Preencha os dados abaixo para cadastrar um novo projeto</p>
+            <label for="" class="label fade-in">Imagem-projeto
+                <div class="img fade-in">
+                    <div class="icon"><i class="bi bi-upload"></i></div>
+                    <div class="texto-img">Clique para fazer upload da imagem</div>
+                    <input type="file" name="" id="">
+                </div>
+            </label>
+            <div class="nome fade-in ">
+                <label for="Nome do Projeto">Nome do Projeto</label>
+                <input type="text" placeholder="Ex: ideiaHub">
+            </div>
+            <div class="descricao fade-in">
+                <label for="descricao">Descricao</label>
+                <input type="text" placeholder="Ex: Desenvolver um app de controle financeiro pessoal com foco em jovens.">
+            </div>
+            <div class="buscando fade-in">
+                <label for="Estamos buscando">Estamos Buscando</label>
+                <input type="text" placeholder="Ex: Desenvolvedor Front-End com experiência em React.">
+            </div>
+            <div class="tecnologias fade-in">
+                <label for="Tecnologias">Tecnologias</label>
+                <input type="text" placeholder="Ex: React, Node.js, PostgreSQL">
+            </div>
+
+            <div class="previsao fade-in">
+                <div class="inicio">
+                    <label for="inicio">Data de inicio</label>
+                    <input type="text" name="" id="" placeholder="Ex: 15/10/2025">
+                </div>
+                <div class="fim">
+                    <label for="fim">Data de termino</label>
+                    <input type="text" name="" id="" placeholder="Ex: 30/11/2025">
+                </div>
+            </div>
+       
+            <div class="button fade-in">
+                <button type="submit">Criar Projeto</button>
+            </div>
+        </div>
+    </div>  
+    <footer>
+        <h2 >ideaHub</h2>
+        <span>&copy; 2025 BuildHub, Conectando pessoas para grandes ideias</span>
+    </footer>
+</body>
+</html>
