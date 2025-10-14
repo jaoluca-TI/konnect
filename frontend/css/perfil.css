@@ -1,5 +1,5 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 *{
     box-sizing: border-box;
     padding: 0;
@@ -19,7 +19,7 @@
 }
 
 body {
-  font-family: 'poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background: var(--body);
 }
 
@@ -59,8 +59,10 @@ nav a:hover{
 }
 
 .botoes button{
-    width: 100px;
-    padding: 10px 10px;
+    all: unset;
+    text-align: center;
+    width: 80px;
+    padding: 3px 8px;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
     background: var(--primaria);
@@ -75,6 +77,10 @@ nav a:hover{
     background: var(--hover);
     transform: scale(1.02);
     transition: all 0.3s ease-in-out;
+}
+
+.botoes i{
+  margin-left: 5px;
 }
 
 button,
@@ -93,6 +99,7 @@ button,
   font-weight: 600;
   transition: all 0.3s ease;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  font-family: 'Poppins', sans-serif;
 }
 
 
@@ -108,12 +115,10 @@ button:hover,
   box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
-
 main {
   width: 80%;
   margin: 30px auto;
 }
-
 
 section {
   background: #fff;
@@ -123,21 +128,23 @@ section {
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
-
 .banner {
   position: relative;
   height: 180px;
   border-radius: 10px;
   overflow: hidden;
 }
+
 .banner img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .banner input {
   display: none;
 }
+
 .btn-banner {
   position: absolute;
   bottom: 10px;
@@ -151,18 +158,22 @@ section {
   align-items: flex-start;
   gap: 20px;
 }
+
 .foto-container {
   text-align: center;
 }
+
 .foto-container input {
   display: none;
 }
+
 .foto-perfil {
   width: 120px;
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
 }
+
 .btn-foto {
   display: block;
   padding: 6px 12px;
@@ -175,6 +186,7 @@ section {
   margin-top: 10px;
   font-weight: 600;
 }
+
 input, textarea, select {
   width: 250px;
   padding: 10px;
@@ -184,6 +196,7 @@ input, textarea, select {
   font-size: 14px;
   transition: all 0.3s ease;
 }
+
 input:focus, textarea:focus, select:focus {
   border-color: var(--primaria);
   box-shadow: 0 0 8px rgba(106,17,203,0.2);
@@ -195,10 +208,12 @@ input:focus, textarea:focus, select:focus {
   flex-direction: column;
   align-items: flex-start;
 }
+
 .biografia label {
   font-weight: 600;
   margin-bottom: 6px;
 }
+
 .biografia textarea {
   width: 90%;
   max-width: 900px;
@@ -211,6 +226,7 @@ input:focus, textarea:focus, select:focus {
   background: #fafafa;
   transition: all 0.2s ease;
 }
+
 .biografia textarea:focus {
   border-color: var(--primaria);
   background: #fff;
@@ -223,6 +239,7 @@ input:focus, textarea:focus, select:focus {
   gap: 10px;
   margin-top: 10px;
 }
+
 .add-habilidade input,
 .add-habilidade select {
   padding: 10px;
@@ -231,6 +248,7 @@ input:focus, textarea:focus, select:focus {
   background: #f9f9fb;
   font-size: 14px;
 }
+
 .add-habilidade select {
   width: 160px;
 }
@@ -245,6 +263,7 @@ input:focus, textarea:focus, select:focus {
   gap: 8px;
   margin-top: 15px;
 }
+
 .tag {
   display: flex;
   align-items: center;
@@ -257,10 +276,12 @@ input:focus, textarea:focus, select:focus {
   background: #eee;
   transition: all 0.3s ease;
 }
+
 .tag small {
   font-size: 12px;
   opacity: 0.8;
 }
+
 .tag button.remove-tag {
   background: transparent;
   border: none;
@@ -269,20 +290,20 @@ input:focus, textarea:focus, select:focus {
   margin-left: 4px;
 }
 
-
 .tag.iniciante {
   background: #e0e0e0;
   color: #444;
 }
+
 .tag.intermediario {
   background: #ede3ff;
   color: #6b3aff;
 }
+
 .tag.avancado {
   background: #d6f5e6;
   color: #007a3d;
 }
-
 
 .interesses-objetivos {
   background: #fff;
@@ -321,7 +342,6 @@ input:focus, textarea:focus, select:focus {
   cursor: pointer;
 }
 
-
 .portfolio {
   display: flex;
   flex-direction: column;
@@ -335,7 +355,6 @@ input:focus, textarea:focus, select:focus {
   gap: 10px;
 }
 
-
 .portfolio input[type="text"],
 .portfolio input[type="url"] {
   flex: 1;
@@ -346,14 +365,12 @@ input:focus, textarea:focus, select:focus {
   font-size: 14px;
 }
 
-
 .portfolio input[type="file"] {
   flex: 1;
   font-size: 14px;
   border: none;
   padding: 5px 0;
 }
-
 
 .colaboracao {
   background: #fff;
@@ -417,18 +434,25 @@ input:focus, textarea:focus, select:focus {
   text-align: center;
   padding: 20px;
   border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
 }
-.zona-perigo h3{
-  color: #ff3b30;
+
+.zona-perigo h2{
+  color: #e0332a;
 }
 
 .zona-perigo p{
   color: var(--branco);
 }
 
-.btn-deletar{
+.zona-perigo button{
   width: 150px;
   background-color: #ff3b30;
+  font-family: 'Poppins', sans-serif;
+}
+
+.zona-perigo button:hover{
+  background: #e0332a;
 }
 
 .btn-deletar:hover{
@@ -438,4 +462,33 @@ input:focus, textarea:focus, select:focus {
 input[type="checkbox"] {
   accent-color: var(--primaria);
   margin-right: 6px;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    padding: 15px 70px;
+    margin-top: 140px;
+    background: var(--verde-claro);
+    color: var(--primaria);
+    
+}
+
+footer h2{
+    font-size: 25px;
+}
+
+footer span{
+    font-size: 15px;
+}
+
+@keyframes fade{
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.fade-in{
+    animation: fade 1s ease-out;
 }

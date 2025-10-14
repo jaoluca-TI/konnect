@@ -59,7 +59,7 @@ nav a:hover{
 
 .botoes button{
     width: 100px;
-    padding: 5px 10px;
+    padding: 3px 8px;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
     background: var(--primaria);
@@ -76,6 +76,9 @@ nav a:hover{
     transition: all 0.3s ease-in-out;
 }
 
+.botoes i{
+    margin-left: 5px;
+}
 
 .section{
     display: flex;

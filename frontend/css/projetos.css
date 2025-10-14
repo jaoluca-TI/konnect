@@ -51,15 +51,11 @@ nav a:hover{
     transition: all 0.3s ease-in-out;
 }
 
-.botoes{
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
-
 .botoes button{
-    width: 100px;
-    padding: 5px 10px;
+    all: unset;
+    text-align: center;
+    width: 80px;
+    padding: 3px 8px;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
     background: var(--primaria);
@@ -74,6 +70,10 @@ nav a:hover{
     background: var(--hover);
     transform: scale(1.02);
     transition: all 0.3s ease-in-out;
+}
+
+.botoes i{
+  margin-left: 5px;
 }
 
 .container{
