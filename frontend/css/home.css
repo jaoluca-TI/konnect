@@ -6,18 +6,20 @@
 }
 
 :root{
-    --neon-blue: #5b63f6;
-    --cool-gray: #7e88b3;
-    --anti-flash-white: #f5f7fa;
-    --charcoal: #2c3e50;
-    --turquesa: #3dd5c0;
     --preto: #000;
-    --maneira: #D6EFFF;
+    --Azul-gelo: #D6EFFF;
+    --primaria: #8c24ff;
+    --secundara: #7B3FE4;
+    --body: #1C1C1F;
+    --verde-claro: #E3F9E5;
+    --hover: #6C3AE0;
+    --background-secundario: #211f2a;
+    --branco: #fff;
 }
 
 body {
   font-family: 'poppins', sans-serif;
-  background: rgb(28, 28, 31);
+  background: var(--body);
 }
 
 header{
@@ -25,20 +27,20 @@ header{
     align-items: center;
     justify-content: space-between;
     padding: 15px 70px;
-    background: #E3F9E5;
+    background: var(--verde-claro);
     color: var(--preto);
     font-family: 'Poppins', sans-serif;
 }
 
 header h1{
-    color: #8c24ff;
+    color: var(--primaria);
     font-size: 30px;
 }
 
 nav a{
     margin: 10px;
     text-decoration: none;
-    color: #7B3FE4 ;
+    color: var(--primaria);
     font-size: 18px;
     padding: 10px;
     border-radius: 10px;
@@ -60,7 +62,7 @@ nav a:hover{
     padding: 5px 10px;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
-    background: #7B3FE4;
+    background: var(--primaria);
     border: none;
     border-radius: 10px;
     color: #E3F9E5;
@@ -69,16 +71,11 @@ nav a:hover{
 }
 
 .botoes button:hover{
-    background: #6C3AE0;
+    background: var(--hover);
     transform: scale(1.02);
     transition: all 0.3s ease-in-out;
 }
 
-.botoes button i{
-    margin-right: 5px;
-    font-size: 18px;
-    align-items: center;
-}
 
 .section{
     display: flex;
@@ -88,18 +85,18 @@ nav a:hover{
     text-align: center;
     gap: 30px;
     margin: 70px 0px;
-    color: #2c3e50;
+    color: var(--Azul-gelo);
 }
 
 .section h1{
-    color:#8c24ff;
+    color: var(--primaria);
     font-size: 35px;
     font-weight: bold;
 }
 
 .section p{
     font-size: 20px;
-    color: var(--maneira);
+    color: var(--Azul-gelo);
 }
 
 .apresentacao{
@@ -126,11 +123,12 @@ nav a:hover{
     justify-content: center;
     align-items: center;
     gap: 30px;
+    margin: 30px 0px;
 }
 
 .comecar h2{
     font-size: 35px;
-    color: #8c24ff;
+    color: var(--primaria);
 }
 
 .botao-comecar{
@@ -145,8 +143,8 @@ nav a:hover{
     width: 250px;  
     padding: 20px 15px;
     border-radius: 15px;
-    background: #7B3FE4;
-    color: #E3F9E5;
+    background: var(--secundara);
+    color: var(--verde-claro);
     font-size: 17px;
     border: 1px solid rgb(28, 28, 31);
     cursor: pointer;
@@ -158,7 +156,7 @@ nav a:hover{
     transform: scale(1.03); 
     font-weight: 500;
     transition: all 0.3s ease-in-out;
-    background: #6C3AE0;
+    background: var(--hover);
 }
 
 .botao-comecar i{
@@ -167,7 +165,52 @@ nav a:hover{
 }
 
 .botao-comecar span{
-    color: #E3F9E5;
+    color: var(--verde-claro);
+}
+
+.section-funcionar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-funcionar h1{
+    color: var(--primaria);
+}
+
+.conteudo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 30px 70px;
+    gap: 20px;
+}
+
+.como-funciona{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 300px;
+}
+
+.funciona{
+    padding: 20px 20px;
+    color: var(--Azul-gelo);
+    border-radius: 15px;
+    border: 1px solid rgba(123, 63, 228, 0.3);
+    background: var(--background-secundario);
+}
+
+.funciona p{
+    color: var(--branco);
+}
+
+.funciona i{
+    font-size: 25px;
+    color: var(--hover);
 }
 
 footer{
@@ -177,8 +220,8 @@ footer{
     font-size: 20px;
     padding: 15px 70px;
     margin-top: 140px;
-    background: #E3F9E5;
-    color: #8c24ff;
+    background: var(--verde-claro);
+    color: var(--primaria);
     
 }
 

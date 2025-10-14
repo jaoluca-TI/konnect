@@ -6,18 +6,20 @@
 }
 
 :root{
-    --neon-blue: #5b63f6;
-    --cool-gray: #7e88b3;
-    --anti-flash-white: #f5f7fa;
-    --charcoal: #2c3e50;
-    --turquesa: #3dd5c0;
     --preto: #000;
-    --maneira: #D6EFFF;
+    --Azul-gelo: #D6EFFF;
+    --primaria: #8c24ff;
+    --secundara: #7B3FE4;
+    --body: #1C1C1F;
+    --verde-claro: #E3F9E5;
+    --hover: #6C3AE0;
+    --background-secundario: #211f2a;
+    --branco: #fff;
 }
 
 body {
-    font-family: 'poppins', sans-serif;
-    background: rgb(28, 28, 31);
+  font-family: 'poppins', sans-serif;
+  background: var(--body);
 }
 
 header{
@@ -25,20 +27,20 @@ header{
     align-items: center;
     justify-content: space-between;
     padding: 15px 70px;
-    background: #E3F9E5;
+    background: var(--verde-claro);
     color: var(--preto);
     font-family: 'Poppins', sans-serif;
 }
 
 header h1{
-    color: #7B3FE4;
+    color: var(--primaria);
     font-size: 30px;
 }
 
 nav a{
     margin: 10px;
     text-decoration: none;
-    color: #7B3FE4 ;
+    color: var(--primaria);
     font-size: 18px;
     padding: 10px;
     border-radius: 10px;
@@ -60,7 +62,7 @@ nav a:hover{
     padding: 5px 10px;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
-    background: #7B3FE4;
+    background: var(--primaria);
     border: none;
     border-radius: 10px;
     color: #E3F9E5;
@@ -69,7 +71,7 @@ nav a:hover{
 }
 
 .botoes button:hover{
-    background: #6C3AE0;
+    background: var(--hover);
     transform: scale(1.02);
     transition: all 0.3s ease-in-out;
 }
@@ -84,12 +86,12 @@ nav a:hover{
 
 .projetos h2{
     font-size: 40px;
-    color: #7B3FE4;
+    color: var(--secundara);
 }
 
 .projetos p{
     font-size: 20px;
-    color: #D6EFFF;
+    color: var(--Azul-gelo);
 }
 
 .button-projeto{
@@ -102,16 +104,16 @@ nav a:hover{
     padding: 5px 10px;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
-    background: #7B3FE4;
+    background: var(--secundara);
     border: none;
     border-radius: 10px;
-    color: #E3F9E5;
+    color: var(--verde-claro);
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
 
 .button-projeto button:hover{
-    background: #6C3AE0;
+    background: var(--hover);
     transform: scale(1.02);
     transition: all 0.3s ease-in-out;
 }
@@ -131,7 +133,7 @@ nav a:hover{
 .card{
     height: 850px;
     width: 500px;
-    background: #D6EFFF;
+    background: var(--Azul-gelo);
     border-radius: 30px;
 }
 
@@ -142,8 +144,6 @@ nav a:hover{
     border-top-right-radius: 30px;
 }
 
-
-
 .conteudo-card{
     display: flex;
     text-align: left;
@@ -153,7 +153,7 @@ nav a:hover{
 }
 
 .conteudo-card h3{
-    color: var(--neon-blue);
+    color: var(--preto);
     font-size: 26px;
     font-weight: 600px;
 }
@@ -183,12 +183,12 @@ nav a:hover{
     background: rgba(123, 63, 228, 0.6);
     border-radius: 5px;
     padding: 3px 10px;
-    color: #D6EFFF;
+    color: var(--Azul-gelo);
     font-size: 14px;
 }
 
 .tec span:hover{
-    background: #6C3AE0;
+    background: var(--hover);
     transition: all 0.3s ease-in-out;
 }
 
@@ -213,7 +213,7 @@ nav a:hover{
     background: rgba(123, 63, 228, 0.6);
     border-radius: 5px;
     padding: 3px 10px;
-    color: #D6EFFF;
+    color: var(--Azul-gelo);
     font-size: 14px;
 } 
 
@@ -242,7 +242,7 @@ nav a:hover{
     background: rgba(123, 63, 228, 0.6);
     border-radius: 5px;
     padding: 3px 10px;
-    color: #D6EFFF;
+    color: var(--Azul-gelo);
     font-size: 14px;
 }
 
@@ -272,16 +272,16 @@ nav a:hover{
     padding: 5px 10px;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
-    background: #7B3FE4;
+    background: var(--secundara);
     border: none;
     border-radius: 10px;
-    color: #E3F9E5;
+    color: var(--verde-claro);
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
 
  .contato button:hover{
-    background: #6C3AE0;
+    background: var(--hover);
     transform: scale(1.02);
     transition: all 0.3s ease-in-out;
 }
@@ -310,8 +310,8 @@ nav a:hover{
     width: 250px;  
     padding: 10px 15px;
     border-radius: 15px;
-    background: #7B3FE4;
-    color: #E3F9E5;
+    background: var(--secundara);
+    color: var(--verde-claro);
     font-size: 17px;
     border: none;
     cursor: pointer;
@@ -323,7 +323,7 @@ nav a:hover{
     transform: scale(1.03); 
     font-weight: 500;
     transition: all 0.3s ease-in-out;
-    background: #6C3AE0;
+    background: var(--hover);
 }
 
 .voltar-proximo i{ 
@@ -332,7 +332,7 @@ nav a:hover{
 }
 
 .voltar-proximo span{
-    color: #D6EFFF;
+    color: var(--Azul-gelo);
 }
 
 footer{
@@ -342,8 +342,8 @@ footer{
     font-size: 20px;
     padding: 15px 70px;
     margin-top: 140px;
-    background: #E3F9E5;
-    color: #8c24ff;
+    background: var(--verde-claro);
+    color: var(--primaria);
     
 }
 
