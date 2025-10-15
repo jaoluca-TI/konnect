@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
   const bannerInput = document.getElementById("bannerInput");
   const bannerPreview = document.getElementById("bannerPreview");
@@ -92,7 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-
   const salvarBtn = document.getElementById("salvar");
   salvarBtn.addEventListener("click", () => {
     if (confirm("Deseja salvar as alterações?")) {
@@ -101,3 +101,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+const salvarMudancas = document.getElementById("salvarMudancas");
+salvarMudancas.addEventListener("click",()=>{
+    Swal.fire({
+      position: "top",
+      icon: "success",
+      title: "Alterações realizadas com sucesso",
+      showConfirmButton: false,
+      timer: 1500
+    });
+})
