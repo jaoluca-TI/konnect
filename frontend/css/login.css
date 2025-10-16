@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --preto: #000;
+    --Azul-gelo: #D6EFFF;
+    --primaria: #8c24ff;
+    --secundara: #7B3FE4;
+    --hover: #6C3AE0;
+    --cinza:#ccc;
+    --branco: #f4f4f4;
+    --placeholder: #808080;
+}
+
+body{
+    background: var(--Azul-gelo);
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'poppins', sans-serif;
+}
+
+.areaLogin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'poppins', sans-serif;
+    gap: 12px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    height: 400px;
+    width: 350px;
+    padding: 60px;
+}
+
+.areaLogin h1{
+    color: var(--primaria);
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: 'Calibri', sans-serif;
+
+}
+
+.input-box input[type="text"],
+.input-box input[type="password"]{
+    width: 230px;
+    padding: 0.8rem 0.75rem;
+    border: 1px solid var(--cinza);
+    padding-left: 12px;
+    border-radius: 0.6rem;
+    outline: none;
+    font-family: 'Calibri', sans-serif;
+    font-size: 14px;
+    color: var(--placeholder);
+}
+
+.input-box input[type="text"]::placeholder,
+.input-box input[type="password"]::placeholder{
+    color: var(--placeholder);
+}
+
+.esqueceu-senha a{
+    text-decoration: none;
+    color: var(--primaria);
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: underline;
+    transition: all 0.3s ease-in-out;
+}
+.esqueceu-senha a:hover{
+    color: var(--preto);
+    transition: all 0.3s ease-in-out;
+}
+
+.botao button[type="submit"]{
+    width: 230px;
+    padding: 0.57rem 0.75rem;
+    border: none;
+    padding-left: 12px;
+    border-radius: 0.6rem;
+    outline: none;
+    background: var(--secundara);
+    color: var(--branco);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-family: 'Calibri', sans-serif;
+    font-size: 14px
+}
+
+.botao button[type="submit"]:hover{
+    background: var(--hover);
+    transition: all 0.3s ease-in-out;
+}
+
+.cadastrar{
+    display: flex;
+    font-size: 14px;
+    gap: 4px;
+}
+
+.cadastrar a{
+    color: var(--primaria);
+    transition: all 0.3s ease-in-out; 
+    font-weight: bold;
+}
+
+.cadastrar a:hover{
+    color: var(--preto);
+    transition: all 0.3s ease-in-out; 
+}
+
+.voltar{
+    margin: 10px 0px;
+    font-size: 14px;
+}
+
+.voltar a{
+    color: var(--primaria);
+    transition: all 0.3s ease-in-out; 
+    font-weight: bold;
+}
+
+.voltar a:hover{
+   color: var(--hover); 
+    transition: all 0.3s ease-in-out; 
+}
