@@ -26,7 +26,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 70px;
+    padding: 7px 70px;
     background: var(--Azul-gelo);
     color: var(--preto);
     font-family: 'Poppins', sans-serif;
@@ -53,18 +53,17 @@ nav a:hover{
 
 .botoes{
     display: flex;
-    gap: 30px;
     align-items: center;
 }
 
 .botoes button{
-    width: 100px;
-    padding: 3px 8px;
-    font-size: 16px;
+    width: 90px;
+    padding: 4px 0px;
+    font-size: 14px;
     font-family: 'Poppins', sans-serif;
     background: var(--primaria);
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     color: #E3F9E5;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
