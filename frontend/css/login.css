@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -35,13 +36,17 @@ body{
     gap: 12px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 10px;
-    height: 400px;
+    height: 500px;
     width: 350px;
-    padding: 60px;
+    padding: 90px;
 }
 
 .areaLogin h1{
     color: var(--primaria);
+    font-size: 40px;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .form{
@@ -49,7 +54,6 @@ body{
     flex-direction: column;
     gap: 8px;
     font-family: 'Calibri', sans-serif;
-
 }
 
 .input-box input[type="text"],
@@ -58,9 +62,11 @@ body{
     padding: 0.8rem 0.75rem;
     border: 1px solid var(--cinza);
     padding-left: 12px;
-    border-radius: 0.6rem;
+    border-radius: 1rem;
     outline: none;
-    font-family: 'Calibri', sans-serif;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-size: 14px;
     color: var(--placeholder);
 }
@@ -88,13 +94,15 @@ body{
     padding: 0.57rem 0.75rem;
     border: none;
     padding-left: 12px;
-    border-radius: 0.6rem;
+    border-radius: 1rem;
     outline: none;
     background: var(--secundara);
     color: var(--branco);
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    font-family: 'Calibri', sans-serif;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-size: 14px
 }
 
