@@ -6,18 +6,21 @@
 }
 
 :root{
-    --preto: #000;
-    --Azul-gelo: #D6EFFF;
-    --primaria: #8c24ff;
-    --secundara: #7B3FE4;
-    --hover: #6C3AE0;
-    --cinza:#ccc;
-    --branco: #f4f4f4;
-    --placeholder: #808080;
+    --azull:#1DA1F2;
+    --azul: #55acee;
+    --azul-claro: #8ec1da;
+    --azul-mais-claro: #7ecef8;
+    --azul-sla: #c0deed;
+    --preto: #292f33;
+    --cinza-escura: #66757f;
+    --cinza:#ccd6dd;
+    --cinza-claro: #e1e8ed;
+    --branco: #f3f7f9;
+    --branco2: #e6edf1;
 }
 
 body{
-    background: var(--Azul-gelo);
+    background: var(--branco2);
 }
 
 .container{
@@ -38,10 +41,11 @@ body{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 10px;
     padding: 50px;
+    background: var(--cinza-claro);
 }
 
 .areaLogin h1{
-    color: var(--primaria);
+    color: var(--preto);
     font-size: 40px;
     font-family: "Outfit", sans-serif;
     font-optical-sizing: auto;
@@ -85,7 +89,7 @@ body{
     font-optical-sizing: auto;
     font-style: normal;
     font-size: 14px;
-    color: var(--placeholder);
+    color: var(--cinza-escura);
 }
 
 .input-box input[type="text"]::placeholder,
@@ -94,12 +98,12 @@ body{
 }
 
 .esqueceu-senha a{
-    color: var(--primaria);
+    color: var(--azul);
     transition: all 0.3s ease-in-out;
 }
 
 .esqueceu-senha a:hover{
-    color: var(--preto);
+    color: var(--azull);
     transition: all 0.3s ease-in-out;
 }
 
@@ -110,8 +114,8 @@ body{
     padding-left: 12px;
     border-radius: 1rem;
     outline: none;
-    background: var(--secundara);
-    color: var(--branco);
+    background: var(--azul);
+    color: var(--preto);
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     font-family: "Outfit", sans-serif;
@@ -121,7 +125,7 @@ body{
 }
 
 .botao button[type="submit"]:hover{
-    background: var(--hover);
+    background: var(--azull);
     transition: all 0.3s ease-in-out;
     transform: scale(1.02);
 }
@@ -134,30 +138,30 @@ body{
 }
 
 .cadastrar p{
-    color: var(--placeholder);
+    color: var(--cinza-escura);
     font-size: 14px;
 }
 
 .cadastrar a{
-    color: var(--primaria);
-    transition: all 0.3s ease-in-out; 
+    color: var(--azul);
     font-family: "Outfit", sans-serif;
-    font-size: 14px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out; 
 }
 
 .cadastrar a:hover{
-    color: var(--preto);
+    color: var(--azull);
     transition: all 0.3s ease-in-out; 
 }
 
 
 .voltar a{
-    color: var(--primaria);
+    color: var(--azul);
     transition: all 0.3s ease-in-out;
 }
 
 .voltar a:hover{
-    color: var(--preto);
+    color: var(--azull);
     transition: all 0.3s ease-in-out;
 }
 
