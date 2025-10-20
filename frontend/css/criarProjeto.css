@@ -23,7 +23,7 @@
 
 body {
   font-family: 'poppins', sans-serif;
-  background: var(--branco);
+  background: var(--branco2);
 }
 
 header{
@@ -38,6 +38,25 @@ header{
 header h1{
     color: var(--azul1);
     font-size: 30px;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav a{
+    color: var(--azul1);
+    text-decoration: none;
+    padding: 7px 20px;
+    border-radius: 7px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav a:hover{
+    background: var(--branco2);
+    transition: all 0.3s ease-in-out;
 }
 
 .botoes{
@@ -55,7 +74,7 @@ header h1{
     background: var(--azul1);
     border: none;
     border-radius: 5px;
-    color: var(--branco2);
+    color: var(--branco);
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
@@ -69,6 +88,7 @@ header h1{
     margin-left: 5px;
     font-size: 14px;
 }
+
 
 .container{
    display: flex;

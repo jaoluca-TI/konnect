@@ -40,6 +40,25 @@ header h1{
     font-size: 30px;
 }
 
+.nav{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav a{
+    color: var(--azul1);
+    text-decoration: none;
+    padding: 7px 20px;
+    border-radius: 7px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav a:hover{
+    background: var(--branco2);
+    transition: all 0.3s ease-in-out;
+}
+
 .botoes{
     display: flex;
     align-items: center;
@@ -68,6 +87,14 @@ header h1{
 .botoes i{
     margin-left: 5px;
     font-size: 14px;
+}
+
+.foto-perfil{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
 }
 
 .section{
@@ -294,7 +321,7 @@ header h1{
     align-items: center;
     text-align: center;
     gap: 30px;
-    background: var(--azul1); 
+    background: var(--cinza-claro); 
     height: 600px;
 }
 
@@ -313,7 +340,7 @@ header h1{
 
 .comecar p{
     font-size: 17px;
-    color: var(--cinza-claro);
+    color: var(--cinza-escuro);
 }
 
 .cardComecar{

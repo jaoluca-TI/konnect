@@ -7,12 +7,17 @@
     <link rel="stylesheet" href="/frontend/css/projetos.css">
     <link rel="shortcut icon" href="/img/konnect.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
 <body>
-  <header class="header">
+    <header class="header">
         <h1 class="fade-in">konnect</h1>
+        <nav class="nav">
+          <a href="home.html">Home</a>
+          <a href="projetos.html">Projetos</a>
+        </nav>
         <div class="botoes fade-in">
-            <button>Login<i class="bi bi-box-arrow-in-right"></i></button>
+          <a href="/frontend/html/login.html"><button id="botaoLogin">Login<i class="bi bi-box-arrow-in-right"></i></button></a>
         </div>
     </header>
     
@@ -60,7 +65,7 @@
                         <span class="date"><i class="bi bi-calendar"></i>  Inicio: 15/01/2025 – <i class="bi bi-calendar"></i>  Fim: 30/06/2025</span>
                     </div>
                     <div class="contato">
-                        <button><i class="bi bi-chat-dots-fill"></i>Entrar em contato</button>
+                        <button><i class="bi bi-envelope-fill"></i></button>
                         <div class="like">
                             <i class="bi bi-heart"></i>
                         </div>
@@ -102,7 +107,7 @@
                          <span class="date"><i class="bi bi-calendar"></i>  Inicio: 15/01/2025 – <i class="bi bi-calendar"></i>  Fim: 30/06/2025</span>
                     </div>
                     <div class="contato">
-                        <button><i class="bi bi-chat-dots-fill"></i>Entrar em contato</button>
+                        <button><i class="bi bi-envelope-fill"></i></button>
                         <div class="like">
                             <i class="bi bi-heart"></i>
                         </div>
@@ -142,10 +147,12 @@
                         </div>
                     </div>
                     <div class="data fade-in">
-                         <span class="date"><i class="bi bi-calendar"></i>  Inicio: 15/01/2025 – <i class="bi bi-calendar"></i>  Fim: 30/06/2025</span>
+                         <span class="date"><i class="bi bi-calendar"></i>Inicio: 15/01/2025 – <i class="bi bi-calendar"></i>  Fim: 30/06/2025</span>
                     </div>
                     <div class="contato">
-                        <button><i class="bi bi-chat-dots-fill"></i>Entrar em contato</button>
+                        <div class="botao-contato">
+                            <button><i class="bi bi-envelope-fill"></i></button>
+                        </div>
                         <div class="like">
                             <i class="bi bi-heart"></i>
                         </div>
@@ -157,14 +164,15 @@
        </div>   
     </div>
      <div class="voltar-proximo">
-            <button ><i class="bi bi-arrow-90deg-left"></i>Voltar</button>
+            <button id="prevBtn"><i class="bi bi-arrow-left"></i></button>
             <span>ou</span>
-            <button><i class="bi bi-arrow-90deg-right"></i>Ver outros projetos</button>
+            <button id="nextBtn"><i class="bi bi-arrow-right"></i></button>
         </div>
     </div>
       <footer>
         <h1>konnect</h1>
         <p>&copy; 2025 konnect, Conectando pessoas para grandes</p>
     </footer>
+    <script src="/frontend/js/projetos.js"></script>
 </body>
 </html>

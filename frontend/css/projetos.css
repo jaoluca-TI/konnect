@@ -23,7 +23,7 @@
 
 body {
   font-family: 'poppins', sans-serif;
-  background: var(--branco);
+  background: var(--branco2);
 }
 
 header{
@@ -38,6 +38,25 @@ header{
 header h1{
     color: var(--azul1);
     font-size: 30px;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav a{
+    color: var(--azul1);
+    text-decoration: none;
+    padding: 7px 20px;
+    border-radius: 7px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav a:hover{
+    background: var(--branco2);
+    transition: all 0.3s ease-in-out;
 }
 
 .botoes{
@@ -69,6 +88,7 @@ header h1{
     margin-left: 5px;
     font-size: 14px;
 }
+
 
 .container{
     display: flex;
@@ -128,10 +148,16 @@ header h1{
 }
 
 .card{
-    height: 850px;
+    height: 870px;
     width: 500px;
     background: var(--cinza-claro);
     border-radius: 30px;
+    transition: all 0.3s ease-in-out
+}
+
+.card:hover{
+    transform: scale(1.01);
+    transition: all 0.3s ease-in-out
 }
 
 .card img{
@@ -281,13 +307,17 @@ header h1{
     text-align: left;
 }
 
+
 .contato button{
-    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 16px;
+    padding: 2px 15px;
     font-family: 'Poppins', sans-serif;
-    background: var(--azul1);
+    background: var(--azul-escuro);
     border: none;
-    border-radius: 10px;
+    border-radius: 6px;
     color: var(--verde-claro);
     cursor: pointer;
     transition: all 0.3s ease-in-out;
@@ -300,7 +330,8 @@ header h1{
 }
 
 .contato i{
-    margin-right: 8px;
+    color: var(--preto);
+    cursor: pointer;
 }
 
 .like{
@@ -320,12 +351,11 @@ header h1{
 }
 
 .voltar-proximo button{
-    width: 250px;  
-    padding: 10px 15px;
-    border-radius: 15px;
+    padding: 4px 40px;
+    border-radius: 8px;
     background: var(--azul1);
     color: var(--branco2);
-    font-size: 17px;
+    font-size: 20px;
     border: none;
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
@@ -339,10 +369,6 @@ header h1{
     background: var(--azul-escuro);
 }
 
-.voltar-proximo i{ 
-    margin-right: 20px;
-    font-size: 17px;
-}
 
 .voltar-proximo span{
     color: var(--Azul-gelo);
