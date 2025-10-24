@@ -4,32 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Perfil do Usuário - IdeaHub</title>
-  <link rel="stylesheet" href="/frontend/css/perfil.css">
+  <link rel="stylesheet" href="/konnect/frontend/css/perfil.css">
   <link rel="shortcut icon" href="/img/konnect.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <header class="header">
         <h1 class="fade-in">konnect</h1>
-        <nav class="nav fade-in">
-            <a href="home.html">Home</a>
-            <a href="projetos.html">Projetos</a>
+        <nav class="nav">
+          <a href="home.html">Home</a>
+          <a href="projetos.html">Projetos</a>
         </nav>
         <div class="botoes fade-in">
-            <button>Login<i class="bi bi-box-arrow-in-right"></i></button>
+          <a href="/frontend/html/login.html"><button id="botaoLogin">Login<i class="bi bi-box-arrow-in-right"></i></button></a>
         </div>
   </header>
   <main class="perfil-container">
 
     <section class="banner fade-in">
-      <img id="bannerPreview" src="banner.jpg" alt="Banner do perfil">
+      <img id="bannerPreview" src="/img/banner default.png" alt="Banner do perfil">
       <label for="bannerInput" class="btn-banner">Alterar Banner</label>
       <input type="file" id="bannerInput" accept="image/*">
     </section>
 
     <section class="dados-pessoais fade-in">
       <div class="foto-container">
-        <img id="fotoPreview" src="perfil.png" alt="" class="foto-perfil">
+        <img id="fotoPreview" src="/img/padrao perfil.png"  class="foto-perfil">
         <label for="fotoInput" class="btn-foto">Alterar foto</label>
         <input type="file" id="fotoInput" accept="image/*">
       </div>
@@ -140,10 +141,9 @@
 
   
   <footer>
-      <h2 >konnect</h2>
-      <span>&copy; 2025 BuildHub, Conectando pessoas para grandes ideias</span>
-  </footer>
-
+      <h1>konnect</h1>
+      <p>&copy; 2025 konnect, Conectando pessoas para grandes</p>
+    </footer>
   <script src="/frontend/js/perfil.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
