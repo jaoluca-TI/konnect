@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --azul1: #1DA1F2;
+  --azul-hover: #1781C2;
+  --cinza: #e6edf1;
+  --texto: #333;
+  --branco: #fff;
+  --sombra: rgba(0, 0, 0, 0.08);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--cinza);
+  color: var(--texto);
+}
+
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 70px;
+  background: #14171a;
+}
+
+header h1 {
+  color: var(--azul1);
+  font-size: 30px;
+}
+
+.botoes button {
+  width: 90px;
+  padding: 4px 0;
+  font-size: 14px;
+  font-weight: 400;
+  background: var(--azul1);
+  border: none;
+  border-radius: 5px;
+  color: var(--branco);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.botoes button:hover {
+  background: var(--azul-hover);
+}
+
+.botoes i {
+  margin-left: 5px;
+}
+
+
+
+.perfil-container {
+  max-width: 950px;
+  margin: 40px auto;
+  background: var(--branco);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--sombra);
+  overflow: hidden;
+  padding-bottom: 40px;
+}
+
+
+.banner {
+  position: relative;
+}
+
+.banner img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.btn-editar {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  background: var(--azul1);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-editar:hover {
+  background: var(--azul-hover);
+}
+
+
+.perfil-info {
+  display: flex;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid #eee;
+}
+
+.foto img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--branco);
+  box-shadow: 0 2px 6px var(--sombra);
+}
+
+.dados {
+  margin-left: 25px;
+}
+
+.dados h2 {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.dados h3 {
+  font-size: 16px;
+  color: #555;
+}
+
+.localizacao {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.status {
+  display: inline-block;
+  background: #e8f9ee;
+  color: #1e9c4b;
+  font-size: 13px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.seguidores {
+  font-size: 14px;
+  color: #555;
+}
+
+.seguidores i {
+  margin-right: 5px;
+}
+
+
+.redes {
+  padding: 30px 40px;
+}
+
+.redes h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.links a {
+  display: inline-block;
+  margin-right: 15px;
+  color: var(--azul1);
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.links a:hover {
+  color: var(--azul-hover);
+}
+
+
+section {
+  padding: 30px 40px;
+  border-top: 1px solid #f0f0f0;
+}
+
+section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.biografia p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tags span {
+  background: #f3f5f7;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 13px;
+  color: #333;
+}
+
+
+.interesses ul {
+  list-style: none;
+}
+
+.interesses li {
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+
+.projetos {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.projeto-card {
+  width: calc(50% - 10px);
+  background: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px var(--sombra);
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.projeto-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.projeto-card h4 {
+  font-size: 16px;
+  padding: 10px 15px;
+  color: #222;
+}
+
+.projeto-card a {
+  display: block;
+  padding: 0 15px 15px;
+  color: var(--azul1);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.projeto-card:hover {
+  transform: translateY(-5px);
+}
+
+
+.opcoes {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.opcoes span {
+  background: #f3f5f7;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+
+.footer {
+  text-align: center;
+  background: #14171a;
+  color: var(--branco);
+  padding: 25px 0;
+  margin-top: 40px;
+}
+
+.footer h2 {
+  color: var(--azul1);
+  margin-bottom: 6px;
+}
