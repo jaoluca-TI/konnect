@@ -14,15 +14,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
+  <header class="header">
         <h1 class="fade-in">konnect</h1>
-        <nav class="nav">
-          <a href="home.php">Home</a>
-          <a href="projeto.php">Projetos</a>
-        </nav>
-        <div class="botoes fade-in">
-          <a href="/frontend/html/login.php"><button id="botaoLogin">Login<i class="bi bi-box-arrow-in-right"></i></button></a>
-        </div>
+                <nav class="nav fade-in">
+                    <a href="/konnect/frontend/html/home.php">Home</a>
+                    <a href="/konnect/frontend/html/projeto.php">Projetos</a>
+                </nav>
+
+            <?php if($logado): ?>
+                <div class="status">
+                    <img src="/konnect/img/default.jpg" alt="imagem padrao">
+                    <div class="dropdown">
+                        <a href="/konnect/frontend/html/viewPerfil.php">Ver Perfil</a>
+                        <a href="/konnect/backend/sair.php">Sair<i class="bi bi-box-arrow-in-right"></i></a>
+                    </div>
+                </div>
+
+                <?php else: ?>
+                <div class="botoes fade-in">
+                    <a href="/konnect/frontend/html/login.php"><button id="botaoLogin">Login<i class="bi bi-box-arrow-in-right"></i></button></a>
+                </div>
+                <?php endif; ?>
     </header>
      <main class="perfil-container">
 

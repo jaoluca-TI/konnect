@@ -16,13 +16,25 @@
 <body>
     <header class="header">
         <h1 class="fade-in">konnect</h1>
-        <nav class="nav">
-          <a href="home.php">Home</a>
-          <a href="projeto.php">Projetos</a>
-        </nav>
-        <div class="botoes fade-in">
-          <a href="/frontend/html/login.html"><button id="botaoLogin">Login<i class="bi bi-box-arrow-in-right"></i></button></a>
-        </div>
+                <nav class="nav fade-in">
+                    <a href="/konnect/frontend/html/home.php">Home</a>
+                    <a href="/konnect/frontend/html/projeto.php">Projetos</a>
+                </nav>
+
+            <?php if($logado): ?>
+                <div class="status">
+                    <img src="/konnect/img/default.jpg" alt="imagem padrao">
+                    <div class="dropdown">
+                        <a href="/konnect/frontend/html/viewPerfil.php">Ver Perfil</a>
+                        <a href="/konnect/backend/sair.php">Sair<i class="bi bi-box-arrow-in-right"></i></a>
+                    </div>
+                </div>
+
+                <?php else: ?>
+                <div class="botoes fade-in">
+                    <a href="/konnect/frontend/html/login.php"><button id="botaoLogin">Login<i class="bi bi-box-arrow-in-right"></i></button></a>
+                </div>
+                <?php endif; ?>
     </header>
 
     <form action="/konnect/backend/criarProjetos.php" method="POST" enctype="multipart/form-data">
