@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 *{
     box-sizing: border-box;
     padding: 0;
@@ -17,8 +17,9 @@
     --cinza-claro: #e1e8ed;
     --cinza-escuro:  #657786;
     --Cinza:#aab8c2;
+    --cinza-ccc: #ccc;
     --branco: #f4f4f4;
-    --branco2: #e6edf1;
+    --branco2: #e6edf1; 
 }
 
 body {
@@ -30,7 +31,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 7px 70px;
+    padding: 12px 70px;
     background: var(--preto2);
     font-family: 'Poppins', sans-serif;
 }
@@ -51,12 +52,12 @@ header h1{
     text-decoration: none;
     padding: 7px 20px;
     border-radius: 7px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.1s ease-in-out;
 }
 
 .nav a:hover{
-    background: var(--branco2);
-    transition: all 0.3s ease-in-out;
+    background: var(--cinza-claro);
+    transition: all 0.1s ease-in-out;
 }
 
 .botoes{
@@ -86,6 +87,54 @@ header h1{
 
 .botoes i{
     margin-left: 5px;
+    font-size: 14px;
+}
+
+.status{
+    display: block;
+}
+
+.status img{
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    object-fit: cover;
+    border-radius: 100%;
+}z
+
+.status:hover{
+    cursor: pointer;
+}
+
+.status:hover .dropdown{
+    display: block;
+}
+
+.dropdown{
+    display: none;
+    position: absolute;
+    background: var(--preto);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.dropdown a{
+    display: block;
+    padding: 12px 20px;
+    color: var(--azul1);
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    font-size: 14px;
+    text-align: left;
+}
+
+.dropdown a:hover{
+    background: var(--preto2);
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.01);
+}
+
+.dropdown i{
+    margin-left: 10px;
     font-size: 14px;
 }
 
@@ -166,21 +215,25 @@ header h1{
 
 .nome label,.descricao label,.buscando label,
 .tecnologias label{
-    color: var(--preto2);
+    color: var(--preto);
 }
 
 input[type="text"] {
     width: 100%;
     padding: 12px 8px;
     border-radius: 8px;
-    border: 1px solid var(--Cinza);
+    border: 2px solid var(--cinza-ccc);
     outline: none;
     background: transparent;
-    color: var(--cinza-escuro);
+    color: var(--preto);
+}
+
+input[type="text"]:focus {
+    border: 2px solid var(--azul1);
 }
 
 input[type="text"]::placeholder{
-    color: var(--Azul-gelo);
+    color: var(--preto);
 }
 
 .previsao{
@@ -191,7 +244,7 @@ input[type="text"]::placeholder{
 }
 
 .previsao label{
-    color: var(--Azul-gelo);
+  color: var(--preto);
 }
 
 .inicio,.fim{
@@ -199,6 +252,26 @@ input[type="text"]::placeholder{
     flex-direction: column;
     gap: 6px;
     width: 100%;
+}
+
+.inicio input[type="date"],.fim input[type="date"]{
+    width: 100%;
+    padding: 12px 8px;
+    border-radius: 8px;
+    border: 2px solid var(--cinza-ccc);
+    outline: none;
+    background: transparent;
+    color: var(--preto);
+}
+
+.inicio input[type="date"]::placeholder,
+.fim input[type="date"]::placeholder{
+    color: var(--preto)
+}
+
+.inicio input[type="date"]:focus,
+.fim input[type="date"]:focus{
+    border: 2px solid var(--azul1);
 }
 
 .button button{
@@ -230,7 +303,7 @@ footer{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 7px 70px;
+    padding: 12px 70px;
     background: var(--preto2);
     color: var(--azul1);
     font-family: 'Poppins', sans-serif;

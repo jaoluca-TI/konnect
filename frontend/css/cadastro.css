@@ -5,7 +5,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-
 }
 
 :root{
@@ -59,19 +58,18 @@ body{
     gap: 10px;;
 }
 
-input[type="email"], input[type="password"]{
+input[type="email"], input[type="password"],[type="text"]{
     border: 1px solid var(--cinza-ccc);
     color: var(--preto);
     outline: none;
     font-size: 14px;
     border-radius: 16px;
     padding: 12px 10px;
-    background: var(--branco);
     width: 250px;
     font-family: "Poppins", sans-serif;
 }
 
-input[type="email"]::placeholder, input[type="password"]::placeholder{
+input[type="email"]::placeholder, input[type="password"]::placeholder, [type="text"]::placeholder{
     color: var(--preto);
 }
 
@@ -102,7 +100,6 @@ input[type="email"]::placeholder, input[type="password"]::placeholder{
     cursor: pointer;
     border-radius: 16px;
     transition: all 0.3s ease-in-out;
-    font-family: "Poppins", sans-serif;
 }
 
 .input-box button:hover{

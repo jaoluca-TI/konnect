@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tag.innerHTML = `
       <span>${habilidade} <small>(${nivel})</small></span>
-      <button class="remove-tag">×</button>
+      <button class="remove-tag">x</button>
     `;
 
 
