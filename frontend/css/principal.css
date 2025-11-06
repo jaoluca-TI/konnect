@@ -419,21 +419,19 @@ header h1{
 .card-comecar button{
     background: var(--azul1);
     border: none;
-    width: 100%;
-    padding: 12px 100px;
+    width: 70%;
+    padding: 12px;
     color: var(--branco2);
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     font-size: 17px;
-    font-family: 'poppins', sans-serif;
 }
 
 
 .card-comecar button:hover{
     background:  var(--azul-escuro);
     transition: all 0.3s ease-in-out;
-    transform: scale(1.01);
 }
 
 .card-comecar .bi{
@@ -448,7 +446,7 @@ footer{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 70px;
+    padding: 7px 70px;
     background: var(--preto2);
     color: var(--azul1);
     font-family: 'Poppins', sans-serif;
