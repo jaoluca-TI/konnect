@@ -40,7 +40,7 @@
   <main class="perfil-container fade-in">
     <div class="banner">
       <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="Banner do perfil">
-      <a href="/konnect/frontend/html/perfil.php"><button>Editar perfil</button></a>
+      <a href="/konnect/frontend/html/profile.php"><button>Editar perfil</button></a>
     </div>
 
     <section class="perfil-info">
