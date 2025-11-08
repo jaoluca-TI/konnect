@@ -101,13 +101,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-const salvarMudancas = document.getElementById("salvarMudancas");
-salvarMudancas.addEventListener("click",()=>{
-    Swal.fire({
-      position: "top",
-      icon: "success",
-      title: "Alterações realizadas com sucesso",
-      showConfirmButton: false,
-      timer: 1500
-    });
-})

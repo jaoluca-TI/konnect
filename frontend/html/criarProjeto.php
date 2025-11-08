@@ -43,11 +43,11 @@
                 <h1>Criar Novo Projeto</h1>
                 <p>Preencha os dados abaixo para cadastrar um novo projeto</p>
               <label class="label fade-in">Imagem-projeto
-    <div class="img fade-in">
-        <div class="icon"><i class="bi bi-upload"></i></div>
-        <div class="texto-img">Clique para fazer upload da imagem</div>
-        <input type="file" name="imagem" id="imagem" style="position:absolute; width:100%; height:100%; opacity:0; cursor:pointer;">
-    </div>
+            <div class="img fade-in">
+            <div class="icon"><i class="bi bi-upload"></i></div>
+            <div class="texto-img">Clique para fazer upload da imagem</div>
+            <input type="file" name="imagem" id="imagem" style="position:absolute; width:100%; height:100%; opacity:0; cursor:pointer;">
+        </div>
         </label>
 
                 <div class="nome fade-in ">
@@ -89,5 +89,6 @@
       <h1>konnect</h1>
       <p>&copy; 2025 konnect, Conectando pessoas para grandes</p>
     </footer>
+    
 </body>
 </html>

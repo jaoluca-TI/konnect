@@ -1,6 +1,6 @@
 <?php
-    include '../../backend/status.php';
-    include __DIR__ . '/../../backend/protect.php';
+  include '../../backend/status.php';
+  include __DIR__ . '/../../backend/protect.php';
 ?> 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -126,24 +126,30 @@
                 <span class="close" >&times;</span>
             </div>
 
-            <div class="input-box">
-                <label for="nomeProjeto">Nome do projeto</label>
-                <input type="text" placeholder="Ex: konnect">
-
-            <div class="input-box">
-                <label for="">link do projeto</label>
-                <input type="url" name="" id="" placeholder="https://...">
-            </div>
-            
-            <div class="img">
-                <label for="">Imagem-projeto</label>
-                <div class="content-img">
-                    <input type="file" name="" id="">
-                    <div class="icon"><i class="bi bi-upload"></i></div>
-                    <div class="texto-img">Clique para fazer upload da imagem</div>
-                    <input type="file" name="imagem" id="imagem" style="position:absolute; width:100%; height:100%; opacity:0; cursor:pointer;">
+                <div class="img">
+                    <label for="">Imagem-projeto</label>
+                    <div class="content-img" id="content-img">
+                      <i class="bi bi-upload" id="iconeImg"></i>
+                      <p id="pImg">Clique para fazer upload da imagem</p>
+                      <input type="file" name="" id="inputImg" class="input-img">
+                    </div>
                 </div>
-            </div>
+
+                <div class="input-box">
+                  <label for="nomeProjeto">Nome do projeto</label>
+                  <input type="text" placeholder="Ex: konnect" name="nomeProjeto">
+                </div>
+
+                <div class="input-box">
+                  <label for="">link do projeto</label>
+                  <input type="url" name="linkProjeto" id="" placeholder="https://...">
+                </div> 
+            
+                <div class="save">
+                  <button id="salvar-modal" name="salvarModal">Salvar</button>
+                  <button id="cancelar-modal" name="cancelarModal">Cancelar</button>
+                </div>
+
             
         </div>
     </div>
@@ -181,13 +187,20 @@
   </main>
 
   
+  <div class="mudancas" id="mudancas"><i class="bi bi-check2"></i></div>
+
+  <div class="notificacao" id="notificacao"></div>
+
+
+  
   <footer>
-      <h1>konnect</h1>
-      <p>&copy; 2025 konnect, Conectando pessoas para grandes</p>
-    </footer>
+    <h1>konnect</h1>
+    <p>&copy; 2025 konnect, Conectando pessoas para grandes</p>
+</footer>
+
   <script src="/konnect/frontend/js/script.js"></script>
   <script src="/konnect/frontend/js/perfil.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 </html>
 

@@ -1,50 +1,91 @@
 const btn = document.getElementById("openModalBtn");
 const modal = document.getElementById("myModal");
 const span = document.getElementsByClassName("close")[0];
-const topoh1 = document.getElementById("topoh1");
 
-btn.addEventListener("click",() =>{
-    modal.style.display = "flex";
-    const content = document.getElementsByClassName("modal-content");
-    const totalProjeto = content.querySelectorAll("#myModal").lenght;
-    const novo = totalProjeto + 1;
-    const novoProjeto = document.createElement("div");
-    novoProjeto.classList.add(".modal");
-    novoProjeto.innerHTML = `
-            <div class="topo">
-                <h1 id="topoh1">Projeto ${novo}</h1>
-                <span class="close" >&times;</span>
-            </div>
-
-            <div class="input-box">
-                <label for="nomeProjeto">Nome do projeto</label>
-                <input type="text" placeholder="Ex: konnect">
-
-            <div class="input-box">
-                <label for="">link do projeto</label>
-                <input type="url" name="" id="" placeholder="https://...">
-            </div>
-            
-            <div class="img">
-                <label for="">Imagem-projeto</label>
-                <div class="content-img">
-                    <input type="file" name="" id="">
-                    <div class="icon"><i class="bi bi-upload"></i></div>
-                    <div class="texto-img">Clique para fazer upload da imagem</div>
-                    <input type="file" name="imagem" id="imagem" style="position:absolute; width:100%; height:100%; opacity:0; cursor:pointer;">
-                </div>
-            </div>
-    `
-    content.appendChild(novoProjeto);
+btn.addEventListener("click", function() {
+  modal.style.display = "flex";
 });
 
-span.addEventListener("click",() =>{
+span.addEventListener("click", function() {
+  modal.style.display = "none";
+});
+
+window.addEventListener("click", function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+});
+
+
+const inputImagem = document.getElementById('inputImg');
+const containerImagem = document.getElementById('content-img');
+const textoImg = document.getElementById('pImg');
+const icone = document.getElementById('iconeImg');
+
+inputImagem.addEventListener('change', function () {
+  const arquivo = this.files[0];
+  if (arquivo) {
+    const leitor = new FileReader();
+
+    leitor.addEventListener('load', function () {
+      textoImg.style.display = 'none';
+      icone.style.display = 'none';
+
+      let imgPreview = containerImagem.querySelector('img');
+      if (!imgPreview) {
+        imgPreview = document.createElement('img');
+        containerImagem.appendChild(imgPreview);
+      }
+
+      imgPreview.src = this.result;
+
+    
+      imgPreview.style.position = 'absolute';
+      imgPreview.style.top = '0';
+      imgPreview.style.left = '0';
+      imgPreview.style.width = '100%';
+      imgPreview.style.height = '100%';
+      imgPreview.style.objectFit = 'cover';
+      imgPreview.style.borderRadius = 'inherit';
+      imgPreview.style.zIndex = '0';
+
+     
+      containerImagem.style.border = 'none';
+      containerImagem.style.background = 'none';
+    });
+
+    leitor.readAsDataURL(arquivo);
+    }
+});
+
+
+const cancelarModal = document.getElementById("cancelar-modal");
+cancelarModal.addEventListener("click", function(){
     modal.style.display = "none";
 })
 
-window.addEventListener("click",(event)=>{
-    if(event.target == modal){
-        modal.style.display = "none"
-    }
-})
+const salvarModal = document.getElementById("salvar-modal");
+
+salvarModal.onclick = function(){
+    const notificacao = document.getElementById("notificacao");
+    notificacao.textContent = "Projeto salvo com sucesso";
+    notificacao.classList.add("ativa");
+
+    setTimeout(()=>{
+        notificacao.classList.remove("ativa");
+    }, 3000);
+}
+
+
+const salvarMudancas = document.getElementById("salvarMudancas");
+
+salvarMudancas.onclick = function(){
+    const mudancas = document.getElementById("mudancas");
+    mudancas.textContent = "Alterações realizadas com sucesso";
+    mudancas.classList.add("clic");
+
+    setTimeout(()=>{
+        mudancas.classList.remove("clic");
+    }, 3000)
+}
 

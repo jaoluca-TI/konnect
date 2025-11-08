@@ -60,7 +60,7 @@
         <span>ou</span>
         <button id="nextBtn"><i class="bi bi-arrow-right"></i></button>
     </div>
-
+    
     <footer>
         <h1>konnect</h1>
         <p>&copy; 2025 konnect, Conectando pessoas para grandes ideias</p>
