@@ -52,12 +52,13 @@ header h1{
     text-decoration: none;
     padding: 7px 20px;
     border-radius: 7px;
+    pointer-events: auto;
     transition: all 0.1s ease-in-out;
 }
 
 .nav a:hover{
-    background: var(--cinza-claro);
-    transition: all 0.1s ease-in-out;
+  background: var(--cinza-claro);
+  transition: all 0.1s ease-in-out;
 }
 
 .botoes{
@@ -717,10 +718,15 @@ input[type="checkbox"] {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition: opacity 0.5s, transform 0.5s;
   font-size: 20px;
+  transform: translateY(-100%);
+  z-index: 9999;
+  pointer-events: none; /* não bloqueará o header quando invisível */
 }
 
 .mudancas.clic{
   opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto; /* permite interagir quando visível */
 }
 
 footer{

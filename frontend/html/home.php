@@ -17,7 +17,7 @@
         <h1 class="fade-in">konnect</h1>
                 <nav class="nav fade-in">
                     <a href="/konnect/frontend/html/home.php">Home</a>
-                    <a href="/konnect/frontend/html/projeto.php">Projetos</a>
+                    <a href="/konnect/frontend/html/project.php">Projetos</a>
                 </nav>
 
             <?php if($logado): ?>
@@ -128,12 +128,21 @@
                         <p>Descubra projetos incríveis e encontre oportunidades de colaboração que combinam com você</p>
                         <a href="/konnect/frontend/html/projeto.php"><button>Explorar agora</button></a>
                     </div>
+                    <?php if(!$logado): ?>
                     <div class="card-comecar">
                         <i class="bi bi-plus-lg"></i>
                         <h2>Criar Projeto</h2>
                         <p>Compartilhe sua ideia e forme um time de talentos para transformá-la em realidade</p>
-                        <a href="/konnect/frontend/html/criarProjeto.php"><button>Criar agora</button></a>
+                        <a href="/konnect/frontend/html/login.php"><button>Criar agora</button></a>
                     </div>
+                    <?php else: ?>
+                        <div class="card-comecar">
+                        <i class="bi bi-plus-lg"></i>
+                        <h2>Criar Projeto</h2>
+                        <p>Compartilhe sua ideia e forme um time de talentos para transformá-la em realidade</p>
+                        <a href="/konnect/frontend/html/criarProj.php"><button>Criar agora</button></a>
+                    </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </section>

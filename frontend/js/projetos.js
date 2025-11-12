@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             <div class="contato">
                 <button><i class="bi bi-envelope-fill"></i></button>
-                <div class="like">
+                <div class="like" id="btnLike">
                     <i class="bi bi-heart"></i>
                 </div>
             </div>
@@ -96,5 +96,46 @@ document.addEventListener("DOMContentLoaded", () => {
     container.appendChild(card);
     aplicarEstiloCard(card);
 
+    // like button do card recém-criado
+    const likeBtn = card.querySelector('.like');
+    if (likeBtn) {
+        likeBtn.addEventListener('click', () => {
+            if (likeBtn.style.color === 'red') {
+                likeBtn.style.color = 'black';
+            } else {
+                likeBtn.style.color = 'red';
+            }
+        });
+    }
+
+
   };
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const msg = urlParams.get('msg');
+    const notificacao = document.getElementById('alteracao');
+
+    if (msg === 'sucesso') {
+        notificacao.textContent = 'Projeto criado com sucesso!';
+        notificacao.classList.add('clic');
+
+        setTimeout(() => {
+            notificacao.classList.remove('clic');
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }, 3000);
+    }
+
+    if (msg === 'erro') {
+        notificacao.textContent = 'Erro ao criar projeto!';
+        notificacao.classList.add('clic-erro');
+
+        setTimeout(() => {
+            notificacao.classList.remove('clic-erro');
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }, 3000);
+    }
+});
+
+
