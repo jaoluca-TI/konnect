@@ -136,6 +136,31 @@ document.addEventListener('DOMContentLoaded', () => {
             window.history.replaceState({}, document.title, window.location.pathname);
         }, 3000);
     }
+
+
+    let liked = false;
+    let count = 0;
+
+    const likeBtn = document.getElementById('btnLike');
+    const contador = document.getElementById('contador');
+    const likeIcon = document.getElementById('likeIcon');
+
+    likeBtn.addEventListener("click", function(){
+        liked = !liked;
+        if(liked){
+            likeIcon.classList.remove('bi-heart');
+            likeIcon.classList.add('bi-heart-fill');
+            likeIcon.style.color = 'red';
+            count++;
+        } else{
+            likeIcon.classList.remove('bi-heart-fill');
+            likeIcon.classList.add('bi-heart');
+            likeIcon.style.color = 'black';
+            count--;
+        }
+        contador.textContent = `${count}`;
+    })
+    
 });
 
 

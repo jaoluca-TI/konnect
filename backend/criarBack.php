@@ -40,7 +40,7 @@
     if ($stmt->execute()) {
         $stmt->close();
         $conexao->close();
-        header("Location: /konnect/frontend/html/project.php?msg=sucesso");
+        header("Location: /konnect/frontend/html/projeto.php?msg=sucesso");
         exit();
     } else {
         $stmt->close();

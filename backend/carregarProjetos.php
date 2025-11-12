@@ -56,8 +56,10 @@ if (mysqli_num_rows($resultado) > 0) {
 
                 <div class="contato fade-in">
                     <button><i class="bi bi-envelope-fill"></i></button>
-                    <div class="like" id="btnLike"><i class="bi bi-heart"></i></div>
-                    <p id="contador">
+                    <div class="like" id="btnLike">
+                        <i class="bi bi-heart" id="likeIcon"></i>
+                        <p id="contador">
+                    </div>
                 </div>
             </div>
         </div>';

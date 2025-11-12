@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>konnect</title>
-    <link rel="stylesheet" href="/konnect/frontend/css/project.css">
+    <link rel="stylesheet" href="/konnect/frontend/css/projeto.css">
     <link rel="shortcut icon" href="/konnect/img/konnectFav.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
         <h1 class="fade-in">konnect</h1>
             <nav class="nav fade-in">
                 <a href="/konnect/frontend/html/home.php">Home</a>
-                <a href="/konnect/frontend/html/project.php">Projetos</a>
+                <a href="/konnect/frontend/html/projeto.php">Projetos</a>
             </nav>
 
             <?php if($logado): ?>
@@ -38,7 +38,7 @@
 
     <div class="container fade-in">
         <div class="projetos fade-in">
-            <h2>projetos</h2>
+            <h2>Projetos</h2>
             <p>Crie ou colabore. Sua ideia pode mudar tudo.</p>
         </div>
 

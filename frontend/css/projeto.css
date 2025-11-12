@@ -25,7 +25,7 @@
 
 body {
   font-family: 'poppins', sans-serif;
-  background: var(--branco2);
+  background: var(--branco2)
 }
 
 header{
@@ -193,33 +193,33 @@ header h1{
 }
 
 .projeto-card {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        padding: 30px 20px;
-        gap: 30px;
-        justify-content: flex-start;
-        align-items: stretch;
-        position: relative;
-        scrollbar-width: thin;
-        scrollbar-color: #00bcd4 #e0f7fa;
-    }
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 30px 20px;
+    gap: 30px;
+    justify-content: flex-start;
+    align-items: stretch;
+    position: relative;
+    scrollbar-width: thin;
+    scrollbar-color: #00bcd4 #e0f7fa;
+}
 
-    .projeto-card::-webkit-scrollbar {
-        height: 8px;
-    }
+.projeto-card::-webkit-scrollbar {
+    height: 8px;
+}
 
-    .projeto-card::-webkit-scrollbar-track {
-        background: #e0f7fa;
-        border-radius: 10px;
-    }
+.projeto-card::-webkit-scrollbar-track {
+    background: #e0f7fa;
+    border-radius: 10px;
+}
 
-    .projeto-card::-webkit-scrollbar-thumb {
-        background-color: #00bcd4;
-        border-radius: 10px;
-        border: 2px solid #e0f7fa;
-    }
+.projeto-card::-webkit-scrollbar-thumb {
+    background-color: #00bcd4;
+    border-radius: 10px;
+    border: 2px solid #e0f7fa;
+}
 
 /* ===== CARD INDIVIDUAL ===== */
 .card {
@@ -250,117 +250,117 @@ header h1{
 
 /* ===== CONTEÚDO INTERNO DO CARD ===== */
 .conteudo-card {
-        padding: 25px;
-        text-align: left;
-    }
+    padding: 25px;
+    text-align: left;
+}
 
-    .conteudo-card h3 {
-        font-size: 22px;
-        margin-bottom: 12px;
-        color: #1a1a1a;
-        font-weight: 600;
-        letter-spacing: -0.5px;
-    }
+.conteudo-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
 
-    .conteudo-card p {
-        font-size: 15px;
-        color: #4a4a4a;
-        margin-bottom: 20px;
-        line-height: 1.6;
-        max-height: 120px;
-        overflow: hidden;
-        position: relative;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        transition: max-height 0.3s ease;
-    }
+.conteudo-card p {
+    font-size: 15px;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    max-height: 120px;
+    overflow: hidden;
+    position: relative;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    transition: max-height 0.3s ease;
+}
 
-    .conteudo-card p:hover {
-        max-height: 500px;
-        overflow-y: auto;
-    }
+.conteudo-card p:hover {
+    max-height: 500px;
+    overflow-y: auto;
+}
 
-    .conteudo-card p::-webkit-scrollbar {
-        width: 4px;
-    }
+.conteudo-card p::-webkit-scrollbar {
+    width: 4px;
+}
 
-    .conteudo-card p::-webkit-scrollbar-track {
-        background: #e0f7fa;
-        border-radius: 10px;
-    }
+.conteudo-card p::-webkit-scrollbar-track {
+    background: #e0f7fa;
+    border-radius: 10px;
+}
 
-    .conteudo-card p::-webkit-scrollbar-thumb {
-        background-color: #00bcd4;
-        border-radius: 10px;
-    }
+.conteudo-card p::-webkit-scrollbar-thumb {
+    background-color: #00bcd4;
+    border-radius: 10px;
+}
 
-    .tec h5, .topicos h5, .vagas h5 {
-        margin-bottom: 8px;
-        font-size: 16px;
-        color: #00838f;
-        font-weight: 500;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-    }
+.tec h5, .topicos h5, .vagas h5 {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #00838f;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
 
-    .spantec span, .span-topicos span, .vagas-span span {
-        display: inline-block;
-        background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
-        color: #006064;
-        border-radius: 25px;
-        padding: 6px 12px;
-        margin: 3px;
-        font-size: 13px;
-        font-weight: 500;
-        transition: all 0.2s ease;
-    }
+.spantec span, .span-topicos span, .vagas-span span {
+    display: inline-block;
+    background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+    color: #006064;
+    border-radius: 25px;
+    padding: 6px 12px;
+    margin: 3px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
 
-    .spantec span:hover, .span-topicos span:hover, .vagas-span span:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 3px 8px rgba(0, 188, 212, 0.2);
-    }
+.spantec span:hover, .span-topicos span:hover, .vagas-span span:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 188, 212, 0.2);
+}
 
-    .data {
-        margin-top: 15px;
-        font-size: 14px;
-        color: #546e7a;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-    }
+.data {
+     margin-top: 15px;
+     font-size: 14px;
+    color: #546e7a;
+     display: flex;
+    align-items: center;
+    gap: 5px;
+}
 
-    .data i {
-        color: #00bcd4;
-    }
+.data i {
+    color: #00bcd4;
+}
 
-    .contato {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 20px;
-        padding-top: 15px;
-        border-top: 1px solid #e0f7fa;
-    }
+.contato {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e0f7fa;
+}
 
-    .contato button {
-        background: linear-gradient(135deg, #00bcd4 0%, #00838f 100%);
-        border: none;
-        color: white;
-        padding: 10px 16px;
-        border-radius: 12px;
-        cursor: pointer;
-        font-weight: 500;
-        transition: all 0.2s ease;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-    }
+.contato button {
+    background: linear-gradient(135deg, #00bcd4 0%, #00838f 100%);
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
 
-    .contato button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0, 188, 212, 0.3);
-    }
+.contato button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 188, 212, 0.3);
+}
 
 .contato i {
     color: var(--preto);
@@ -368,14 +368,28 @@ header h1{
 }
 
 .contato .like {
-        color: #e91e63;
-        font-size: 22px;
-        cursor: pointer;
-        transition: transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-right: 15px;
+    color: red;
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-    .contato .like:hover {
-        transform: scale(1.2);
+#contador{
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+}
+
+.contato .like:hover {
+    transform: scale(1.2);
+}
+
+.like.red{
+    color: red;
 }
 
 /* ===== BOTÕES DE NAVEGAÇÃO ===== */
