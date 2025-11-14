@@ -14,10 +14,13 @@
 </head>
 <body>
     <header class="header">
-        <h1 class="fade-in">konnect</h1>
+        <div class="logo">
+            <img src="/konnect/img/konnectIcon.png" alt="">
+            <h1>onnect</h1>
+        </div>
                 <nav class="nav fade-in">
                     <a href="/konnect/frontend/html/home.php">Home</a>
-                    <a href="/konnect/frontend/html/projeto.php">Projetos</a>
+                    <a href="/konnect/frontend/html/proj.php">Projetos</a>
                 </nav>
 
             <?php if($logado): ?>

@@ -12,7 +12,7 @@
             header('Location: ' . $next);
             exit();
         }
-        header('Location: /konnect/frontend/html/home.html');
+        header('Location: /konnect/frontend/html/home.php');
         exit();
     }
 

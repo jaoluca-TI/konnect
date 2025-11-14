@@ -55,17 +55,33 @@ if (mysqli_num_rows($resultado) > 0) {
                 </div>
 
                 <div class="contato fade-in">
-                    <button><i class="bi bi-envelope-fill"></i></button>
-                    <div class="like" id="btnLike">
-                        <i class="bi bi-heart" id="likeIcon"></i>
-                        <p id="contador">
+                    <button class="contato-btn"><i class="bi bi-envelope-fill"></i></button>
+                    <div class="like">
+                        <i class="bi bi-heart like-icon"></i>
+                        <span class="like-count">0</span>
                     </div>
                 </div>
             </div>
         </div>';
     }
 } else {
-    echo '<p>Nenhum projeto cadastrado ainda.</p>';
+    echo'<div class="container-nenhum">
+            <div class="nenhum-projeto">
+                <i class="bi bi-folder-plus"></i>
+                <h1>Nenhum projeto por aqui… por enquanto.</h1>
+                <p>Crie o primeiro e comece a organizar suas ideias.</p>
+                <hr>
+                <div class="nenhum-sugestoes">
+                    <p>Sugestões do que você pode criar:</p>
+                    <div class="nenhum-spans">
+                        <span>Ideia inicial</span>
+                        <span>Website</span>
+                        <span>Portfolio</span>
+                        <span>App Mobile</span>
+                    </div>
+                </div>
+            </div>
+        </div>';
 }
 ?>
 
