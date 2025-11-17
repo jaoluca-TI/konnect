@@ -44,6 +44,7 @@ if ($logado && isset($_SESSION['id'])) {
                     <a href="/konnect/frontend/html/home.php">Home</a>
                     <a href="/konnect/frontend/html/proj.php">Projetos</a>
                 </nav>
+             
 
             <?php if($logado): ?>
                 <div class="status">

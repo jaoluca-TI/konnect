@@ -23,8 +23,6 @@ if ($logado && isset($_SESSION['id'])) {
     }
 }
 
-
-
 ?> 
 <!DOCTYPE html>
 <html lang="pt-br">

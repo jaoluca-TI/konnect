@@ -185,6 +185,7 @@ header{
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  font-family: 'poppins', sans-serif;
 }
 
 .banner button:hover{

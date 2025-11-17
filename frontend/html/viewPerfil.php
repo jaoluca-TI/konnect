@@ -19,8 +19,8 @@ $perfil = mysqli_fetch_assoc($resultado);
 $perfil = is_array($perfil) ? $perfil : [];
 
 // Aplicar fallback caso não exista perfil SEM gerar warning
-$banner = !empty($perfil['banner']) ? "/konnect/img/" . $perfil['banner'] : "/konnect/img/default_banner.jpg";
-$foto = !empty($perfil['foto_perfil']) ? "/konnect/img/" . $perfil['foto_perfil'] : "/konnect/img/default_avatar.png";
+$banner = !empty($perfil['banner']) ? "/konnect/img/" . $perfil['banner'] : "/konnect/img/bannerDefault.png";
+$foto = !empty($perfil['foto_perfil']) ? "/konnect/img/" . $perfil['foto_perfil'] : "/konnect/img/default.jpg";
 
 $nome = $perfil['nome'] ?? "Nome não definido";
 $titulo_profissional = $perfil['titulo_profissional'] ?? "Título não definido";
@@ -45,6 +45,27 @@ $projeto_url = $perfil['projeto_url'] ?? "";
 
 /* NOVO: disponibilidade semanal */
 $disponibilidade_semanal = $perfil['disponibilidade_semanal'] ?? "";
+
+
+ $fotoPerfil = "/konnect/img/default.jpg"; // fallback
+
+if ($logado && isset($_SESSION['id'])) {
+
+    $id_usuario = $_SESSION['id'];
+
+    $sqlFoto = "SELECT foto_perfil FROM perfil_usuario WHERE id_usuario = '$id_usuario'";
+    $resFoto = mysqli_query($conexao, $sqlFoto);
+
+    if ($resFoto && mysqli_num_rows($resFoto) > 0) {
+        $dados = mysqli_fetch_assoc($resFoto);
+
+        if (!empty($dados['foto_perfil'])) {
+            $fotoPerfil = "/konnect/img/" . $dados['foto_perfil'];
+        }
+    }
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

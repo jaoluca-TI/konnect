@@ -26,7 +26,6 @@
         $stmt->bind_param('s', $email);
         $stmt->execute();
         $result = $stmt->get_result();
-
         // Verifica se encontrou o usuário
         if ($row = $result->fetch_assoc()) {
             
