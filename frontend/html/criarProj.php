@@ -1,6 +1,27 @@
 <?php
     include '../../backend/status.php';
     include __DIR__ . '/../../backend/protect.php';
+
+    include __DIR__ . '/../../backend/conexao.php';
+
+$fotoPerfil = "/konnect/img/default.jpg"; // fallback
+
+if ($logado && isset($_SESSION['id'])) {
+
+    $id_usuario = $_SESSION['id'];
+
+    $sqlFoto = "SELECT foto_perfil FROM perfil_usuario WHERE id_usuario = '$id_usuario'";
+    $resFoto = mysqli_query($conexao, $sqlFoto);
+
+    if ($resFoto && mysqli_num_rows($resFoto) > 0) {
+        $dados = mysqli_fetch_assoc($resFoto);
+
+        if (!empty($dados['foto_perfil'])) {
+            $fotoPerfil = "/konnect/img/" . $dados['foto_perfil'];
+        }
+    }
+}
+
 ?> 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -15,15 +36,18 @@
 </head>
 <body>
     <header class="header">
-        <h1 class="fade-in">konnect</h1>
+        <div class="logo">
+            <img src="/konnect/img/konnectIcon.png" alt="">
+            <h1>onnect</h1>
+        </div>
                 <nav class="nav fade-in">
                     <a href="/konnect/frontend/html/home.php">Home</a>
-                    <a href="/konnect/frontend/html/project.php">Projetos</a>
+                    <a href="/konnect/frontend/html/proj.php">Projetos</a>
                 </nav>
 
             <?php if($logado): ?>
                 <div class="status">
-                    <img src="/konnect/img/default.jpg" alt="imagem padrao">
+                    <img src="<?php echo $fotoPerfil; ?>" alt="perfil">
                     <div class="dropdown">
                         <a href="/konnect/frontend/html/viewPerfil.php">Ver Perfil</a>
                         <a href="/konnect/backend/sair.php">Sair<i class="bi bi-box-arrow-in-right"></i></a>
@@ -85,10 +109,14 @@
         </div>  
     
 </form>
+<script src="/konnect/frontend/js/criar.js"></script>   
     <footer>
-      <h1>konnect</h1>
-      <p>&copy; 2025 konnect, Conectando pessoas para grandes</p>
+        <div class="logo">
+            <img src="/konnect/img/konnectIcon.png" alt="">
+            <h1>onnect</h1>
+        </div>
+        <p>&copy; 2025 konnect, Conectando pessoas para grandes ideias</p>
     </footer>
-    <script src="/konnect/frontend/js/criar.js"></script>
+    
 </body>
 </html>

@@ -1,4 +1,4 @@
-<?php
+<?php 
     session_start();
     // If user is already logged in, forward them to next (if provided) or home
     $next = $_GET['next'] ?? '';
@@ -18,42 +18,39 @@
 
     $login_error = $_SESSION['login_error'] ?? null;
     if (isset($_SESSION['login_error'])) unset($_SESSION['login_error']);
-    $register_success = $_SESSION['status_cadastro'] ?? null;
-    if (isset($_SESSION['status_cadastro'])) unset($_SESSION['status_cadastro']);
+    $register_success = $_SESSION['login_success'] ?? null;
+    if (isset($_SESSION['login_success'])) unset($_SESSION['login_success']);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
     <link rel="stylesheet" href="/konnect/frontend/css/login.css">
-    <link rel="shortcut icon" href="/konnect/img/konnectFav.png" type="image/x-icon">
+    <title>Login</title>
 </head>
 <body>
-    <div class="container">
+    <div class="login-box">
         <?php if ($register_success): ?>
-            <div class="alert" style="color:green; padding:8px;"><?= htmlspecialchars($register_success) ?></div>
+            <div class="notificacaoSucesso" id="notificacaoSucesso"><?= htmlspecialchars($register_success)?></div>
         <?php endif; ?>
         <?php if ($login_error): ?>
-            <div class="alert" style="color:crimson; padding:8px;"><?= htmlspecialchars($login_error) ?></div>
+            <div class="notificacaoError" id="notificacaoError"><?= htmlspecialchars($login_error)?></div>
         <?php endif; ?>
-        <form action="/konnect/backend/verificar.php" method="post" class="form">
-            <h1>konnect</h1>
-            <div class="input-box">
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="password" name="senha" placeholder="Senha" required>
-            </div>
-            <div class="esqueceu-senha">
-                <a href="">Esqueceu a senha?</a>
-            </div>
-            <div class="input-box">
-                <button type="submit">Entrar</button>
-            </div>
-            <div class="nao-conta">
-                <p>Não tem uma conta? <a href="/konnect/frontend/html/cadastro.php">Crie uma</a></p>
-            </div>
+
+        <h1>konnect</h1>
+        <form action="/konnect/backend/verificar.php" method="post">
+            <input type="email" placeholder="E-mail" name="email" required>
+            <input type="password" placeholder="Senha" name="senha" required>
+            <a href="#" class="senha">Esqueceu a Senha</a>
+            <button type="submit" placeholder="Entrar" id="entrar">Entrar</button>
         </form>
+        
+        <p>Não possui conta? <a href="/konnect/frontend/html/cadastro.php">Crie uma</a></p>
     </div>
+
+    <script src="/konnect/frontend/js/login.js"></script>
 </body>
 </html>
+

@@ -17,3 +17,18 @@ if (fotoSalva && botaoLogin && areaBotao) {
     areaBotao.appendChild(img);
 }
 
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const sucesso = document.getElementById("notificacaoSucesso");
+
+    if (sucesso) {
+        sucesso.style.display = "flex";
+        // Espera o usuário ver a mensagem e redireciona para a home
+        setTimeout(() => {
+            window.location.href = "/konnect/frontend/html/home.php";
+        }, 2000);
+
+        return;
+    }
+});

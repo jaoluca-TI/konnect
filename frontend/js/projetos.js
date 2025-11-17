@@ -176,7 +176,49 @@ document.addEventListener('DOMContentLoaded', () => {
                 contador.textContent = Math.max(0, count - 1);
             }
         });
+
+
     });
+
+    //modal de filtro
+    const filtrarBtn = document.getElementById("filtrarBtn");
+    const modal = document.getElementById("modal");
+    const fechar = document.getElementById("fechar");
+
+    filtrarBtn.addEventListener("click", function(){
+        modal.style.display = "flex";
+    });
+
+    fechar.addEventListener("click", function(){
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+});
+
+
+    // filtro
+
+    const tipoLabel = document.getElementById("tipoLabel");
+    const tipoSelect = document.getElementById("tipo");
+    tipoLabel.addEventListener("click", function(){
+        tipoSelect.style.display = "flex"
+    })
+
+
+    //limpar o Filtro
+
+    const limpar = document.getElementById("limpar"); 
+    const seletor = document.querySelectorAll(".select");
+
+    limpar.addEventListener("click", function(){
+        seletor.forEach(select =>{
+            select.value = "";
+        })
+    })
     
 });
 

@@ -23,108 +23,125 @@
     --cinza-ccc: #ccc;
     --branco: #f4f4f4;
     --branco2: #e6edf1;
+    --branco3: #fff;
 }
 
 body{
-    background: var(--cinza-ccc);
-}
-
-.container{
+    background-color: var(--branco3);
+    height: 100vh;
+    margin: 0;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
 }
 
-.form{
-    display: flex;
-    flex-direction: column;
+.login-box{
+    background-color: var(--branco3);
+    width: 340px;
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: grid;
+    gap: 30px;
+
+}
+
+form{
+    display: grid;
     gap: 15px;
-    padding: 80px 40px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-radius: 14px;
-    background: var(--branco);
+
 }
 
-.form h1{
+h1{
     color: var(--azul1);
     text-align: center;
-    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+
 }
 
-.input-box{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;;
-}
-
-input[type="email"], input[type="password"]{
+.login-box form input{
+    padding: 10px;
+    border-radius: 6px;
     border: 1px solid var(--cinza-ccc);
-    color: var(--preto);
     outline: none;
-    font-size: 14px;
-    border-radius: 16px;
-    padding: 12px 10px;
-    background: var(--branco);
-    width: 250px;
-    font-family: "Poppins", sans-serif;
 }
 
-input[type="email"]::placeholder, input[type="password"]::placeholder{
-    color: var(--preto);
+.login-box form input:focus{
+    border-color: var(--azul1);
 }
 
-.esqueceu-senha{
-    display: flex;
-    justify-content: right;
-    font-size: 12px;
-}
-
-.esqueceu-senha a{
-    font-size: 12px;
-    color: var(--azul1);
-    transition: all 0.3s ease-in-out;
-}
-
-.esqueceu-senha a:hover{
-    font-weight: bold;
-    color: var(--azul-escuro);
-    transition: all 0.3s ease-in-out;
-    transform: scale(1.01);
-}
-
-.input-box button{
-    background: var(--azul1);
-    color: var(--branco);
-    padding: 12px 10px;
+.login-box button[type="submit"]{
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    background-color: var(--azul1);
+    color: var(--branco3);
+    font-size: 16px;
     border: none;
-    cursor: pointer;
-    border-radius: 16px;
     transition: all 0.3s ease-in-out;
-    font-family: "Poppins", sans-serif;
 }
 
-.input-box button:hover{
+.login-box button[type="submit"]:hover{
+    cursor: pointer;
     background: var(--azul-escuro);
     transition: all 0.3s ease-in-out;
-    transform: scale(1.02);
 }
 
-.nao-conta{
-    font-size: 12px;
-    color: var(--cinza-escuro);
-}
-
-.nao-conta a{
+a{
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
     color: var(--azul1);
+    font-family: "Poppins", sans-serif;
     transition: all 0.3s ease-in-out;
-    margin-left: 4px;
 }
 
-.nao-conta a:hover{
-    font-weight: bold;
-    color: var(--azul-escuro);
+a:hover{
+    text-decoration: underline;
     transition: all 0.3s ease-in-out;
-    transform: scale(1.01);
 }
+
+.senha{
+    text-align: right;
+}
+
+p{
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+}
+
+.notificacaoSucesso{
+    display: none;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: var(--azul1);
+    color: var(--branco3);
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: transform 0.3s ease-in-out;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+}
+
+.notificacaoError{
+    display: none;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: red;
+    color: var(--branco3);
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: transform 0.3s ease-in-out;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+}
+
