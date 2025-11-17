@@ -1,8 +1,9 @@
-<?php
+<?php 
     session_start();
     $usuario_existe = $_SESSION['usuario_Existe'] ?? null;
     if (isset($_SESSION['usuario_Existe'])) unset($_SESSION['usuario_Existe']);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,24 +14,26 @@
     <link rel="shortcut icon" href="/konnect/img/konnectFav.png" type="image/x-icon">
 </head>
 <body>
-    <div class="container">
+    <div class="login-box">
+        <h1>Konnect</h1>
         <form action="/konnect/backend/cadastrar.php" method="post" class="form">
-            <h1>konnect</h1>
+
             <?php if ($usuario_existe): ?>
-                <div style="color:crimson; padding:8px;">Email já cadastrado. Tente outro ou faça login.</div>
+                <div class="notificacaoError">Email já cadastrado. Tente outro ou faça login.</div>
+            <?php else: ?>
+                <div class="notificacaoSucesso">Cadastro Realizado com sucesso</div>
             <?php endif; ?>
-            <div class="input-box">
-                <input type="text" name="nome" placeholder="Name" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="password" name="senha" placeholder="Password" required>
-            </div>
-            <div class="input-box">
-                <button type="submit">Cadastrar</button>
-            </div>
-            <div class="nao-conta">
-                <p>Já tem uma conta?<a href="/konnect/frontend/html/login.php">Entrar</a></p>
-            </div>
+
+            <input type="text" name="nome" placeholder="Nome" required>
+            <input type="email" name="email" placeholder="E-mail" required>
+            <input type="password" name="senha" placeholder="Senha" required>
+            <button type="submit">Criar conta</button>
         </form>
+        
+        <p>Já possuí uma conta? <a href="/konnect/frontend/html/login.php">Entrar</a></p>
     </div>
 </body>
 </html>
+
+
+

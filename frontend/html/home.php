@@ -1,5 +1,30 @@
 <?php
     include '../../backend/status.php';
+    $register_success = $_SESSION['login_success'] ?? null;
+    unset($_SESSION['login_success']);
+
+    include __DIR__ . '/../../backend/conexao.php';
+
+    $fotoPerfil = "/konnect/img/default.jpg"; // fallback
+
+if ($logado && isset($_SESSION['id'])) {
+
+    $id_usuario = $_SESSION['id'];
+
+    $sqlFoto = "SELECT foto_perfil FROM perfil_usuario WHERE id_usuario = '$id_usuario'";
+    $resFoto = mysqli_query($conexao, $sqlFoto);
+
+    if ($resFoto && mysqli_num_rows($resFoto) > 0) {
+        $dados = mysqli_fetch_assoc($resFoto);
+
+        if (!empty($dados['foto_perfil'])) {
+            $fotoPerfil = "/konnect/img/" . $dados['foto_perfil'];
+        }
+    }
+}
+
+
+
 ?> 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -14,15 +39,18 @@
 </head>
 <body>
     <header class="header">
-        <h1 class="fade-in">konnect</h1>
+        <div class="logo">
+            <img src="/konnect/img/konnectIcon.png" alt="">
+            <h1>onnect</h1>
+        </div>
                 <nav class="nav fade-in">
                     <a href="/konnect/frontend/html/home.php">Home</a>
-                    <a href="/konnect/frontend/html/projeto.php">Projetos</a>
+                    <a href="/konnect/frontend/html/proj.php">Projetos</a>
                 </nav>
 
             <?php if($logado): ?>
                 <div class="status">
-                    <img src="/konnect/img/default.jpg" alt="imagem padrao">
+                    <img src="<?php echo $fotoPerfil; ?>" alt="perfil">
                     <div class="dropdown">
                         <a href="/konnect/frontend/html/viewPerfil.php">Ver Perfil</a>
                         <a href="/konnect/backend/sair.php">Sair<i class="bi bi-box-arrow-in-right"></i></a>
@@ -35,6 +63,12 @@
                 </div>
                 <?php endif; ?>
     </header>
+
+    <?php if($register_success): ?>
+    <div class="notificacaoSucesso" id="notificacaoSucesso">
+        <?= htmlspecialchars($register_success) ?>
+    </div>
+    <?php endif; ?>
 
      <main class="fade-in">
         <section class="section ">
@@ -128,21 +162,33 @@
                         <p>Descubra projetos incríveis e encontre oportunidades de colaboração que combinam com você</p>
                         <a href="/konnect/frontend/html/projeto.php"><button>Explorar agora</button></a>
                     </div>
+                    <?php if(!$logado): ?>
                     <div class="card-comecar">
                         <i class="bi bi-plus-lg"></i>
                         <h2>Criar Projeto</h2>
                         <p>Compartilhe sua ideia e forme um time de talentos para transformá-la em realidade</p>
-                        <a href="/konnect/frontend/html/criarProjeto.php"><button>Criar agora</button></a>
+                        <a href="/konnect/frontend/html/login.php"><button>Criar agora</button></a>
                     </div>
+                    <?php else: ?>
+                        <div class="card-comecar">
+                        <i class="bi bi-plus-lg"></i>
+                        <h2>Criar Projeto</h2>
+                        <p>Compartilhe sua ideia e forme um time de talentos para transformá-la em realidade</p>
+                        <a href="/konnect/frontend/html/criarProj.php"><button>Criar agora</button></a>
+                    </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </section>
     </main>
     <footer>
-        <h1>konnect</h1>
+        <div class="logo">
+            <img src="/konnect/img/konnectIcon.png" alt="">
+            <h1>onnect</h1>
+        </div>
         <p>&copy; 2025 konnect, Conectando pessoas para grandes ideias</p>
     </footer>
 
-    <script src="/frontend/js/home.js"></script>
+    <script src="/konnect/frontend/js/home.js"></script>
 </body>
 </html>                

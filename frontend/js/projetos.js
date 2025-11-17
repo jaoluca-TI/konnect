@@ -85,10 +85,11 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="data fade-in">
                 <span class="date"><i class="bi bi-calendar"></i> Início: ${projeto.inicio} – <i class="bi bi-calendar"></i> Fim: ${projeto.fim}</span>
             </div>
-            <div class="contato">
-                <button><i class="bi bi-envelope-fill"></i></button>
+            <div class="contato fade-in">
+                <button class="contato-btn"><i class="bi bi-envelope-fill"></i></button>
                 <div class="like">
-                    <i class="bi bi-heart"></i>
+                    <i class="bi bi-heart like-icon"></i>
+                    <span class="like-count">0</span>
                 </div>
             </div>
         </div>
@@ -96,5 +97,129 @@ document.addEventListener("DOMContentLoaded", () => {
     container.appendChild(card);
     aplicarEstiloCard(card);
 
+    // Adiciona listener para o like do novo card
+    const btnLike = card.querySelector('.like');
+    if (btnLike) {
+        const likeIcon = btnLike.querySelector('.like-icon');
+        const contador = btnLike.querySelector('.like-count');
+        let liked = false;
+
+        if (likeIcon && contador) {
+            btnLike.addEventListener('click', function() {
+                liked = !liked;
+                const count = parseInt(contador.textContent || '0');
+
+                if(liked) {
+                    likeIcon.classList.remove('bi-heart');
+                    likeIcon.classList.add('bi-heart-fill');
+                    likeIcon.style.color = 'red';
+                    contador.textContent = count + 1;
+                } else {
+                    likeIcon.classList.remove('bi-heart-fill');
+                    likeIcon.classList.add('bi-heart');
+                    likeIcon.style.color = 'black';
+                    contador.textContent = Math.max(0, count - 1);
+                }
+            });
+        }
+    }
   };
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const msg = urlParams.get('msg');
+    const notificacao = document.getElementById('alteracao');
+
+    if (msg === 'sucesso') {
+        notificacao.textContent = 'Projeto criado com sucesso!';
+        notificacao.classList.add('clic');
+
+        setTimeout(() => {
+            notificacao.classList.remove('clic');
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }, 3000);
+    }
+
+    if (msg === 'erro') {
+        notificacao.textContent = 'Erro ao criar projeto!';
+        notificacao.classList.add('clic-erro');
+
+        setTimeout(() => {
+            notificacao.classList.remove('clic-erro');
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }, 3000);
+    }
+
+        //Botao de Curtidas
+
+    const Likes = document.querySelectorAll('.like'); // Aqui eu pego todos os Elementos dentro da minha Classe e vira um array
+    Likes.forEach((likes) => { // vou percore esse meu array que eu fiz a constante likes receber
+        const likeIcon = likes.querySelector('.like-icon'); //pegando o icone
+        const contador = likes.querySelector('.like-count'); // pegando o contador
+        let liked = false; //Criei uma variavel like que recebe false
+
+        if (!likeIcon || !contador) return;
+
+        likes.addEventListener('click', function() { // quando clicar no botao de curtir vai executar uma funcao 
+            liked = !liked;  // a minha variavel liked recebe true agora
+            const count = parseInt(contador.textContent || '0');
+
+            if(liked) {
+                likeIcon.classList.remove('bi-heart');
+                likeIcon.classList.add('bi-heart-fill');
+                likeIcon.style.color = 'red';
+                contador.textContent = count + 1;
+            } else {
+                likeIcon.classList.remove('bi-heart-fill');
+                likeIcon.classList.add('bi-heart');
+                likeIcon.style.color = 'black';
+                contador.textContent = Math.max(0, count - 1);
+            }
+        });
+
+
+    });
+
+    //modal de filtro
+    const filtrarBtn = document.getElementById("filtrarBtn");
+    const modal = document.getElementById("modal");
+    const fechar = document.getElementById("fechar");
+
+    filtrarBtn.addEventListener("click", function(){
+        modal.style.display = "flex";
+    });
+
+    fechar.addEventListener("click", function(){
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+});
+
+
+    // filtro
+
+    const tipoLabel = document.getElementById("tipoLabel");
+    const tipoSelect = document.getElementById("tipo");
+    tipoLabel.addEventListener("click", function(){
+        tipoSelect.style.display = "flex"
+    })
+
+
+    //limpar o Filtro
+
+    const limpar = document.getElementById("limpar"); 
+    const seletor = document.querySelectorAll(".select");
+
+    limpar.addEventListener("click", function(){
+        seletor.forEach(select =>{
+            select.value = "";
+        })
+    })
+    
+});
+
+

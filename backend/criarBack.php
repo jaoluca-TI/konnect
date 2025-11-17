@@ -21,7 +21,7 @@
     
     $imagem_nome = "";
     if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] == 0) {
-        $pasta = __DIR__ . "/../uploads/";
+        $pasta = __DIR__ . "/../img/";
         if (!is_dir($pasta)) {
             mkdir($pasta, 0777, true);
         }
@@ -38,13 +38,16 @@
     $stmt->bind_param("sssssss", $nome, $descricao, $buscando, $tecnologias, $inicio, $fim, $imagem_nome);
 
     if ($stmt->execute()) {
-        echo "<script>alert('Projeto criado com sucesso!'); window.location.href='/frontend/html/projetos.html';</script>";
+        $stmt->close();
+        $conexao->close();
+        header("Location: /konnect/frontend/html/proj.php?msg=sucesso");
+        exit();
     } else {
-        echo "<script>alert('Erro ao criar projeto: " . $stmt->error . "'); window.history.back();</script>";
+        $stmt->close();
+        $conexao->close();
+        header("Location: /konnect/frontend/html/criarProj.php?msg=erro");
+        exit();
     }
-
-    $stmt->close();
-    $conexao->close();
 }
 ?>
 

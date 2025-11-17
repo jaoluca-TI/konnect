@@ -36,19 +36,29 @@ header{
     font-family: 'Poppins', sans-serif;
 }
 
-header h1{
-    color: var(--azul1);
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    width: 60px;
+    height: 60px;
+}
+
+.logo h1{
     font-size: 30px;
+    color: var(--azul2);
 }
 
 .nav{
     display: flex;
     align-items: center;
-    gap: 10px;
+    margin-right: 90px;
 }
 
 .nav a{
-    color: var(--azul1);
+    color: var(--azul2);
     text-decoration: none;
     padding: 7px 20px;
     border-radius: 7px;
@@ -97,10 +107,10 @@ header h1{
 .status img{
     width: 50px;
     height: 50px;
-    margin-left: 20px;
+    margin-left: 32px;
     object-fit: cover;
     border-radius: 100%;
-}z
+}
 
 .status:hover{
     cursor: pointer;
@@ -119,7 +129,7 @@ header h1{
 
 .dropdown a{
     display: block;
-    padding: 12px 20px;
+    padding: 10px 30px;
     color: var(--azul1);
     text-decoration: none;
     transition: all 0.3s ease-in-out;
@@ -136,6 +146,26 @@ header h1{
 .dropdown i{
     margin-left: 10px;
     font-size: 14px;
+}
+
+
+.notificacaoSucesso{
+    display: none;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    position: fixed;
+    top: 100px;
+    right: 10px;
+    width: 18%;
+    height: 50px;
+    background-color: #29a640;
+    color: var(--branco);
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: transform 0.3s ease-in-out;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
 }
 
 .section{
@@ -170,7 +200,7 @@ header h1{
 }
 
 .apresentacao-titulo h1{
-    color: var(--preto);
+    color: var(--azul2);
     font-size: 35px;
     font-family: 'Poppins', sans-serif;
 }
@@ -463,3 +493,5 @@ footer{
 .fade-in{
     animation: fade 1s ease-out;
 }
+
+
