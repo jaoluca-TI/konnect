@@ -1,6 +1,6 @@
 <?php
     include '../../backend/status.php';
-    $register_success = $_SESSION['login_success'] ?? null;
+    $login_success = $_SESSION['login_success'] ?? null;
     unset($_SESSION['login_success']);
 
     include __DIR__ . '/../../backend/conexao.php';
@@ -62,13 +62,11 @@ if ($logado && isset($_SESSION['id'])) {
                 <?php endif; ?>
     </header>
 
-    <?php if($register_success): ?>
-    <div class="notificacaoSucesso" id="notificacaoSucesso">
-        <?= htmlspecialchars($register_success) ?>
-    </div>
+    <?php if ($login_success === "success"): ?>
+    <div class="notificacaoSucesso" id="notificacaoSucesso"></div>
     <?php endif; ?>
 
-     <main class="fade-in">
+     <main class="">
         <section class="section ">
             <div class="apresentacao ">
                 <div class="apresentacao-titulo">

@@ -17,14 +17,16 @@
     --cinza-claro: #e1e8ed;
     --cinza-escuro:  #657786;
     --Cinza:#aab8c2;
+    --cinza-nenhum: #4a4a4a;
     --cinza-ccc: #ccc;
     --branco: #f4f4f4;
     --branco2: #e6edf1; 
+
 }
 
 body {
   font-family: 'poppins', sans-serif;
-  background: var(--branco2);
+  background: #070E17;
 }
 
 header{
@@ -161,7 +163,7 @@ header{
 
 .projetos h2 {
     font-size: 35px;
-    color: var(--preto);
+    color: var(--branco);
 }
 
 .projetos p {
@@ -220,6 +222,7 @@ header{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 20px 30px;
     border-radius: 12px;
+    background-color: var(--branco);
 }
 
 .close{
@@ -356,28 +359,26 @@ header{
 .card {
     display: flex;
     flex-direction: column;
-    height: 870px;
-    width: 500px;
-    background: var(--cinza-claro);
-    border-radius: 30px;
-    box-shadow: 0 8px 30px rgba(0, 188, 212, 0.1);
+    width: 380px;
+    background: #0B1626;
+    border-radius: 22px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
     overflow: hidden;
-    border: 1px solid rgba(0, 188, 212, 0.1);
     transition: all 0.3s ease-in-out;
 }
 
 .card:hover {
     transform: scale(1.02);
     transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(29, 161, 242, 0.5);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     transition: all 0.3s ease-in-out;
 }
 
 .card img {
     width: 100%;
     height: 25%;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
 }
 
 /* ===== CONTEÚDO INTERNO DO CARD ===== */
@@ -392,14 +393,14 @@ header{
 .conteudo-card h3 {
     font-size: 22px;
     margin-bottom: 12px;
-    color: #1a1a1a;
+    color: #FFFFFF;
     font-weight: 600;
     letter-spacing: -0.5px;
 }
 
 .conteudo-card p {
     font-size: 15px;
-    color: #4a4a4a;
+    color: var(--cinza-escuro);
     margin-bottom: 20px;
     line-height: 1.6;
     max-height: 120px;
@@ -432,7 +433,7 @@ header{
 .tec h5, .topicos h5, .vagas h5 {
     margin-bottom: 8px;
     font-size: 16px;
-    color: #00838f;
+    color: var(--cinza-escuro);
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -441,11 +442,11 @@ header{
 
 .spantec span, .span-topicos span, .vagas-span span {
     display: inline-block;
-    background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
-    color: #006064;
-    border-radius: 25px;
-    padding: 6px 12px;
-    margin: 3px;
+    background: #1E4F80;
+    color: var(--branco);
+    border-radius: 6px;
+    padding: 4px 20px;
+    margin: 5px;
     font-size: 13px;
     font-weight: 500;
     transition: all 0.2s ease;
@@ -453,7 +454,7 @@ header{
 
 .spantec span:hover, .span-topicos span:hover, .vagas-span span:hover {
     transform: translateY(-2px);
-    box-shadow: 0 3px 8px rgba(0, 188, 212, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
 }
 
 .data {
@@ -498,8 +499,14 @@ header{
     box-shadow: 0 4px 12px rgba(29, 161, 242, 0.5);
 }
 
-.contato i {
-    color: var(--preto);
+.bi.bi-envelope-fill {
+    color: var(--preto2);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.bi.bi-heart.like-icon{
+    color: red;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }

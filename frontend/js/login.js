@@ -1,16 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const sucesso = document.getElementById("notificacaoSucesso");
     const erro = document.getElementById("notificacaoError");
-
-    if (sucesso) {
-        sucesso.style.display = "flex";
-        // Espera o usuário ver a mensagem e redireciona para a home
-        setTimeout(() => {
-            window.location.href = "/konnect/frontend/html/home.php";
-        }, 2000);
-
-        return;
-    }
 
     if (erro) {
         erro.style.display = "flex";
@@ -21,4 +10,48 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 500);
         }, 4000);
     }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const erro = document.getElementById("notificacaoError");
+
+    function mostrarNotificacao(mensagem, redirectUrl) {
+        erro.hidden = false;
+        erro.innerHTML = `
+            <div class="icon">✖</div>
+            <span>${mensagem}</span>
+        `;
+
+        // Força o estado inicial antes de animar
+        erro.classList.remove("entrada", "saida");
+
+        requestAnimationFrame(() => {
+            erro.classList.add("entrada");
+
+            // Sai após 2,5s
+            setTimeout(() => {
+                erro.classList.remove("entrada");
+                erro.classList.add("saida");
+            }, 2500);
+        });
+
+        // Depois que a animação terminar → redireciona
+        erro.addEventListener("transitionend", function end(e) {
+            if (e.propertyName !== "transform") return;
+            if (!erro.classList.contains("saida")) return;
+
+            erro.hidden = true;
+            erro.classList.remove("saida");
+            erro.removeEventListener("transitionend", end);
+
+            if (redirectUrl) {
+                window.location.assign(redirectUrl);
+            }
+        });
+    }
+
+    // Exemplo: mostra ao carregar a página
+    // Ajuste para seu fluxo de login
+    mostrarNotificacao("Email ou senha inválidos!", "/konnect/frontend/html/login.php");
+
 });

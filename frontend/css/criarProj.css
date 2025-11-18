@@ -24,7 +24,7 @@
 
 body {
   font-family: 'poppins', sans-serif;
-  background: var(--branco2);
+  background: #070E17;
 }
 
 header{
@@ -153,7 +153,7 @@ header{
    display: flex;
    justify-content: center;
    margin: 1.8% 30%;
-   background: var();
+   background: #0B1626;
    border-radius: 20px;
    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -167,7 +167,7 @@ header{
 }
 
 .conteudo-container h1{
-    color: var(--Azul-gelo);
+    color: var(--branco);
 }
 
 .conteudo-container p{
@@ -178,7 +178,7 @@ header{
 .label{
     display: flex;
     flex-direction: column;
-    color: var(--preto);
+    color: var(--cinza-escuro);
     gap: 6px;
 }
 
@@ -197,7 +197,7 @@ header{
 }
 
 .img:hover{
-    background: var(--cinza-claro);
+    background: #070E17;
     border: 2px dashed var(--azul-escuro);
     transition: all 0.3s ease-in-out;
     transform: scale(1.02);
@@ -208,12 +208,12 @@ header{
 }
 
 .icon i{
-    color: var(--Azul-gelo);
+    color: var(--cinza-escuro);
     font-size: 30px;
 }
 
 .texto-img{
-    color: var(--Azul-gelo);
+    color: var(--cinza-escuro);
 }
 
 .nome,.descricao,.buscando,.tecnologias,
@@ -225,7 +225,7 @@ header{
 
 .nome label,.descricao label,.buscando label,
 .tecnologias label{
-    color: var(--preto);
+    color: var(--cinza-escuro);
 }
 
 input[type="text"] {
@@ -235,7 +235,7 @@ input[type="text"] {
     border: 2px solid var(--cinza-ccc);
     outline: none;
     background: transparent;
-    color: var(--preto);
+    color: var(--cinza-ccc);
 }
 
 input[type="text"]:focus {
@@ -243,7 +243,7 @@ input[type="text"]:focus {
 }
 
 input[type="text"]::placeholder{
-    color: var(--preto);
+    color: var(--cinza-ccc);
 }
 
 .previsao{
@@ -254,7 +254,7 @@ input[type="text"]::placeholder{
 }
 
 .previsao label{
-  color: var(--preto);
+  color: var(--cinza-escuro);
 }
 
 .inicio,.fim{
@@ -271,12 +271,12 @@ input[type="text"]::placeholder{
     border: 2px solid var(--cinza-ccc);
     outline: none;
     background: transparent;
-    color: var(--preto);
+    color: var(--cinza-ccc);
 }
 
 .inicio input[type="date"]::placeholder,
 .fim input[type="date"]::placeholder{
-    color: var(--preto)
+    color: var(--cinza-ccc);
 }
 
 .inicio input[type="date"]:focus,

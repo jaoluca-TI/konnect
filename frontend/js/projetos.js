@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 } else {
                     likeIcon.classList.remove('bi-heart-fill');
                     likeIcon.classList.add('bi-heart');
-                    likeIcon.style.color = 'black';
+                    likeIcon.style.color = 'red';
                     contador.textContent = Math.max(0, count - 1);
                 }
             });
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 likeIcon.classList.remove('bi-heart-fill');
                 likeIcon.classList.add('bi-heart');
-                likeIcon.style.color = 'black';
+                likeIcon.style.color = 'red';
                 contador.textContent = Math.max(0, count - 1);
             }
         });

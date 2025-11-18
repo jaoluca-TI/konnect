@@ -18,17 +18,45 @@ if (fotoSalva && botaoLogin && areaBotao) {
 }
 
 
-
 document.addEventListener("DOMContentLoaded", () => {
     const sucesso = document.getElementById("notificacaoSucesso");
 
-    if (sucesso) {
-        sucesso.style.display = "flex";
-        // Espera o usuário ver a mensagem e redireciona para a home
-        setTimeout(() => {
-            window.location.href = "/konnect/frontend/html/home.php";
-        }, 2000);
+    function mostrarNotificacao(mensagem, redirectUrl) {
+        sucesso.hidden = false;
+        sucesso.innerHTML = `
+            <div class="icon">✓</div>
+            <span>${mensagem}</span>
+        `;
 
-        return;
+        // Força o estado inicial antes de animar
+        sucesso.classList.remove("entrada", "saida");
+
+        requestAnimationFrame(() => {
+            sucesso.classList.add("entrada");
+
+            // Sai após 2,5s
+            setTimeout(() => {
+                sucesso.classList.remove("entrada");
+                sucesso.classList.add("saida");
+            }, 2500);
+        });
+
+        // Depois que a animação terminar → redireciona
+        sucesso.addEventListener("transitionend", function end(e) {
+            if (e.propertyName !== "transform") return;
+            if (!sucesso.classList.contains("saida")) return;
+
+            sucesso.hidden = true;
+            sucesso.classList.remove("saida");
+            sucesso.removeEventListener("transitionend", end);
+
+            if (redirectUrl) {
+                window.location.assign(redirectUrl);
+            }
+        });
     }
+
+    // Exemplo: mostra ao carregar a página
+    // Ajuste para seu fluxo de login
+    mostrarNotificacao("Login realizado com sucesso!", "/konnect/frontend/html/home.php");
 });
