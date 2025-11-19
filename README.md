@@ -1,9 +1,10 @@
 
 <p align="center">
-  <img src="LOGO_DO_KONNECT.png" alt="Konnect Logo" width="140"/>
+  <img src="<img width="500" height="500" alt="konnectIcon" src="https://github.com/user-attachments/assets/8d91dce4-d7c8-4556-9641-ad633530f54c" />
+" alt="Konnect Logo" width="140"/>
 </p>
 
-<h1 align="center">🌙 Konnect — Conecte habilidades. Construa ideias.</h1>
+<h1 align="center">Konnect — Conecte habilidades. Construa ideias.</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Mode-Dark-000000?style=for-the-badge&logo=github&logoColor=white" />
