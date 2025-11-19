@@ -1,50 +1,52 @@
-
+<!-- LOGO ADAPTÁVEL -->
 <p align="center">
-  <img src="<img width="500" height="500" alt="konnectIcon" src="https://github.com/user-attachments/assets/8d91dce4-d7c8-4556-9641-ad633530f54c" />
-" alt="Konnect Logo" width="140"/>
+  <picture>
+    <!-- Dark mode -->
+    <source srcset="https://github.com/user-attachments/assets/8d91dce4-d7c8-4556-9641-ad633530f54c" media="(prefers-color-scheme: dark)">
+    <!-- Light mode -->
+    <img src="https://github.com/user-attachments/assets/8d91dce4-d7c8-4556-9641-ad633530f54c" width="140" alt="Konnect Logo">
+  </picture>
 </p>
 
 <h1 align="center">Konnect — Conecte habilidades. Construa ideias.</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Mode-Dark-000000?style=for-the-badge&logo=github&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tema-Automatico-9b59b6?style=for-the-badge" />
 </p>
 
 ---
 
-<div style="background:#0d1117; padding:20px; border-radius:10px;">
-
 ## 📌 Sobre o projeto
 
-O **Konnect** é uma plataforma criada para unir pessoas de diferentes áreas e facilitar a colaboração em projetos reais.  
-Aqui você encontra parceiros, monta equipes, publica ideias e participa de projetos de acordo com seu perfil e habilidades.
+O Konnect é uma plataforma criada para unir pessoas de diferentes áreas com um único objetivo: colaborar em projetos reais.
+Aqui você pode encontrar parceiros, formar equipes, oferecer sua habilidade ou participar de ideias que combinam com o seu perfil.
 
-A plataforma também funciona como uma vitrine para mostrar suas capacidades técnicas e sua forma de trabalhar em equipe.
+A plataforma funciona como uma ponte entre quem tem uma ideia e quem tem a habilidade necessária para realizá-la — seja desenvolvimento, design, arte visual, marketing, administração ou qualquer área criativa e técnica.
 
-</div>
+O Konnect também impulsiona seu crescimento profissional: você trabalha em equipe, testa suas habilidades, melhora suas capacidades técnicas e ainda pode ser descoberto para novos projetos.
+
+🔗 Exemplo simples
+
+Imagine que um desenvolvedor backend queira criar um site, mas não sabe desenhar a interface.
+Ele entra no Konnect, descreve o projeto e rapidamente encontra um designer disposto a colaborar.
+Da mesma forma, um ilustrador pode encontrar um programador para transformar sua ideia em um aplicativo.
+
+O Konnect existe exatamente para facilitar essas conexões.
 
 ---
-
-
-<div style="background:#0d1117; padding:20px; border-radius:10px;">
 
 ## 🛠 Tecnologias utilizadas
 
 <p>
-  <img height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg"/>
-  <img height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg"/>
+  <img height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
+  <img height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"/>
   <img height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"/>
   <img height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"/>
-  <img height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg"/>
+  <img height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"/>
   <img height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"/>
 </p>
 
-</div>
-
 ---
-
-
-<div style="background:#0d1117; padding:20px; border-radius:10px;">
 
 ## 🧠 Funcionalidades principais
 
@@ -55,12 +57,7 @@ A plataforma também funciona como uma vitrine para mostrar suas capacidades té
 - 🎯 Match entre perfis e habilidades  
 - 📁 Perfil profissional personalizado  
 
-</div>
-
 ---
-
-
-<div style="background:#0d1117; padding:20px; border-radius:10px;">
 
 ## 🚀 Instalação & Execução
 
@@ -73,6 +70,6 @@ A plataforma também funciona como uma vitrine para mostrar suas capacidades té
 
 ### 📥 Instalação
 
-1. **Clone o repositório:**
+1. Clone o repositório:
    ```bash
-   git clone https://github.com/Nicollaspc/Konnect.git
+   git clone https://github.com/SEU_USUARIO/Konnect.git
