@@ -58,7 +58,7 @@ $nomeUsuario = ($logado && !empty($perfil['nome'])) ? $perfil['nome'] : '';
         
         <div class="logo">
             <img src="/konnect/img/konnectIcon.png" alt="">
-            <h1>konnect</h1>
+            <h1>onnect</h1>
         </div>
                 <nav class="nav fade-in">
                     <a href="/konnect/frontend/html/home.php">Home</a>
@@ -186,7 +186,7 @@ $nomeUsuario = ($logado && !empty($perfil['nome'])) ? $perfil['nome'] : '';
                         <i class="bi bi-search"></i>
                         <h2>Explorar Projetos</h2>
                         <p>Descubra projetos incríveis e encontre oportunidades de colaboração que combinam com você</p>
-                        <a href="/konnect/frontend/html/projeto.php"><button>Explorar agora</button></a>
+                        <a href="/konnect/frontend/html/proj.php"><button>Explorar agora</button></a>
                     </div>
                     <?php if(!$logado): ?>
                     <div class="card-comecar">
@@ -216,5 +216,7 @@ $nomeUsuario = ($logado && !empty($perfil['nome'])) ? $perfil['nome'] : '';
     </footer>
 
     <script src="/konnect/frontend/js/home.js"></script>
+
+    
 </body>
 </html>                
