@@ -1,0 +1,478 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --azul1:#1DA1F2;
+    --azul2: #55acee;
+    --azul3: #8ec1da;
+    --azul4: #7ecef8;
+    --azul5: #c0deed;
+    --azul-escuro:#007BFF;
+    --preto: #292f33;
+    --preto2:  #14171a;
+    --cinza-claro: #e1e8ed;
+    --cinza-escuro:  #657786;
+    --Cinza:#aab8c2;
+    --cinza-ccc: #ccc;
+    --branco: #f4f4f4;
+    --branco2: #e6edf1; 
+}
+
+body {
+  font-family: 'poppins', sans-serif;
+  background: #070E17;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 70px;
+    background: var(--preto2);
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    width: 60px;
+    height: 60px;
+}
+
+.logo h1{
+    font-size: 30px;
+    color: var(--azul2);
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    margin-right: 90px;
+}
+
+.nav a{
+    color: var(--azul2);
+    text-decoration: none;
+    padding: 7px 20px;
+    border-radius: 7px;
+    transition: all 0.1s ease-in-out;
+}
+
+.nav a:hover{
+    background: var(--cinza-claro);
+    transition: all 0.1s ease-in-out;
+}
+
+.botoes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botoes button{
+    width: 90px;
+    padding: 4px 0px;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    background: var(--azul1);
+    border: none;
+    border-radius: 5px;
+    color: var(--branco);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.botoes button:hover{
+    background: #1781C2;
+    transition: all 0.3s ease-in-out;
+}
+
+.botoes i{
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: row-reverse; 
+    margin-right: 30px;
+}
+
+.nome-header {
+    color: white;
+}
+
+
+.status img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 100%;
+    margin: 0;
+}
+
+
+.status:hover{
+    cursor: pointer;
+}
+
+.status:hover .dropdown{
+    display: block;
+}
+
+.dropdown{
+    display: none;
+    position: absolute;
+    background: var(--preto);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-left: -30px; /* ajuste fino */
+}
+
+.dropdown a{
+    display: block;
+    padding: 10px 30px;
+    color: var(--azul1);
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    font-size: 14px;
+    text-align: left;
+}
+
+.dropdown a:hover{
+    background: var(--preto2);
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.01);
+}
+
+.dropdown i{
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+
+.container{
+   display: flex;
+   justify-content: center;
+   margin: 1.8% 30%;
+   background: #0B1626;
+   border-radius: 20px;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.conteudo-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px ;
+    width: 100%;
+    margin: 4% 7%;
+}
+
+.conteudo-container h1{
+    color: var(--branco);
+}
+
+.conteudo-container p{
+    color: var(--cinza-escuro);
+    font-size: 17px;
+}
+
+.label{
+    display: flex;
+    flex-direction: column;
+    color: var(--cinza-escuro);
+    gap: 6px;
+}
+
+.img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 250px;
+    border-radius: 12px;
+    border: 2px dashed var(--azul1);
+    cursor: pointer;
+    gap: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.img:hover{
+    background: #070E17;
+    border: 2px dashed var(--azul-escuro);
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.02);
+}
+
+.img input{
+    display: none;
+}
+
+.icon i{
+    color: var(--cinza-escuro);
+    font-size: 30px;
+}
+
+.texto-img{
+    color: var(--cinza-escuro);
+}
+
+.nome,.descricao,.buscando,.tecnologias,
+.previsao{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.nome label,.descricao label,.buscando label,
+.tecnologias label{
+    color: var(--cinza-escuro);
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px 8px;
+    border-radius: 8px;
+    border: 2px solid var(--cinza-ccc);
+    outline: none;
+    background: transparent;
+    color: var(--cinza-ccc);
+}
+
+input[type="text"]:focus {
+    border: 2px solid var(--azul1);
+}
+
+input[type="text"]::placeholder{
+    color: var(--cinza-ccc);
+}
+
+.previsao{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.previsao label{
+  color: var(--cinza-escuro);
+}
+
+.inicio,.fim{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.inicio input[type="date"],.fim input[type="date"]{
+    width: 100%;
+    padding: 12px 8px;
+    border-radius: 8px;
+    border: 2px solid var(--cinza-ccc);
+    outline: none;
+    background: transparent;
+    color: var(--cinza-ccc);
+}
+
+.inicio input[type="date"]::placeholder,
+.fim input[type="date"]::placeholder{
+    color: var(--cinza-ccc);
+}
+
+.inicio input[type="date"]:focus,
+.fim input[type="date"]:focus{
+    border: 2px solid var(--azul1);
+}
+
+.button button{
+    width: 200px;
+    padding: 10px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    background: var(--azul1);
+    border: none;
+    border-radius: 10px;
+    color: var(--branco2);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.button button:hover{
+    background: var(--azul-escuro);
+    transform: scale(1.02);
+    transition: all 0.3s ease-in-out;
+}
+
+.button button i{
+    margin-right: 5px;
+    font-size: 18px;
+    align-items: center;
+}
+
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 70px;
+    background: var(--preto2);
+    color: var(--azul1);
+    font-family: 'Poppins', sans-serif;
+}
+
+
+@keyframes fade{
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.fade-in{
+    animation: fade 1s ease-out;
+}
+
+/*Responsividade*/
+
+
+
+/* ===========================
+   RESPONSIVIDADE GLOBAL
+   =========================== */
+
+/* ----- Tablets grandes (iPad Air, iPad 10", Android 10") ----- */
+@media (max-width: 1180px) {
+    header, footer {
+        padding: 12px 40px;
+    }
+
+    .nav {
+        margin-right: 40px;
+    }
+
+    .container {
+        margin: 2% 15%;
+    }
+}
+
+/* ----- iPad Mini / Tablets médios ----- */
+@media (max-width: 1024px) {
+    header, footer {
+        padding: 12px 30px;
+    }
+
+    .nav {
+        margin-right: 20px;
+        gap: 5px;
+    }
+
+    .container {
+        margin: 3% 10%;
+    }
+
+    .conteudo-container {
+        margin: 6% 5%;
+    }
+}
+
+/* ----- Tablets pequenos / celulares grandes (800px) ----- */
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .nav {
+        margin-right: 0;
+    }
+
+    .status {
+        margin-right: 0;
+    }
+
+    .container {
+        margin: 5% 8%;
+    }
+
+    .previsao {
+        flex-direction: column;
+    }
+}
+
+/* ----- Celulares grandes e médios ----- */
+@media (max-width: 768px) {
+    .container {
+        margin: 6% 5%;
+    }
+
+    header, footer {
+        padding: 12px 20px;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .logo h1 {
+        font-size: 23px;
+    }
+
+    .img {
+        height: 200px;
+    }
+
+    input[type="text"],
+    input[type="date"] {
+        font-size: 15px;
+        padding: 10px;
+    }
+}
+
+/* ----- Celulares médios ----- */
+@media (max-width: 600px) {
+    .container {
+        margin: 8% 4%;
+    }
+
+    .button button {
+        width: 100%;
+    }
+}
+
+/* ----- Celulares pequenos (Moto E, iPhone SE, etc.) ----- */
+@media (max-width: 480px) {
+    header {
+        padding: 16px;
+        text-align: center;
+    }
+
+    .logo h1 {
+        font-size: 20px;
+    }
+
+    .container {
+        margin: 10% 3%;
+    }
+
+    .img {
+        height: 170px;
+    }
+
+    .nav a {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+}
