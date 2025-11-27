@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 *{
     box-sizing: border-box;
@@ -100,17 +101,27 @@ header{
     font-size: 14px;
 }
 
-.status{
-    display: block;
+.status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: row-reverse; 
+    margin-right: 30px;
 }
 
-.status img{
+.nome-header {
+    color: white;
+}
+
+
+.status img {
     width: 50px;
     height: 50px;
-    margin-left: 32px;
     object-fit: cover;
     border-radius: 100%;
+    margin: 0;
 }
+
 
 .status:hover{
     cursor: pointer;
@@ -125,6 +136,7 @@ header{
     position: absolute;
     background: var(--preto);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-left: -30px; /* ajuste fino */
 }
 
 .dropdown a{
@@ -366,6 +378,29 @@ section h3 {
   font-size: 13px;
 }
 
+
+.mudancas{
+  position: fixed;
+  top: 0px;
+  background: #28a745;
+  color: var(--branco);
+  padding: 30px;
+  width: 100%;
+  opacity: 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: opacity 0.5s, transform 0.5s;
+  font-size: 20px;
+  transform: translateY(-100%);
+  z-index: 9999;
+  pointer-events: none; /* não bloqueará o header quando invisível */
+}
+
+.mudancas.clic{
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto; /* permite interagir quando visível */
+}
+
 footer{
     display: flex;
     align-items: center;
@@ -386,4 +421,238 @@ footer{
     animation: fade 1s ease-out
 }
 
+/*Responsividade*/
 
+/* ================================
+   RESPONSIVIDADE GERAL
+================================ */
+
+/* ------ Telas muito grandes (monitores 2K e 4K) ------ */
+@media (min-width: 1800px) {
+    .perfil-container {
+        max-width: 1200px;
+    }
+
+    header, footer {
+        padding: 12px 120px;
+    }
+}
+
+/* ------ Tablets em modo landscape (iPad Air, iPad Pro) ------ */
+@media (max-width: 1366px) {
+    header {
+        padding: 12px 40px;
+    }
+
+    .nav {
+        margin-right: 40px;
+    }
+
+    .perfil-info {
+        padding: 20px 20px;
+    }
+
+    .projeto-card {
+        width: calc(50% - 10px);
+    }
+}
+
+/* ------ iPad Mini / iPad Air portrait (768px – 1024px) ------ */
+@media (max-width: 1024px) {
+    header {
+        padding: 12px 25px;
+    }
+
+    .nav {
+        margin-right: 15px;
+        gap: 5px;
+    }
+
+    .nav a {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    .status {
+        margin-right: 10px;
+    }
+
+    .perfil-container {
+        margin: 20px auto;
+    }
+
+    .perfil-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .dados {
+        margin-left: 0;
+    }
+
+    .projeto-card {
+        width: 100%;
+    }
+}
+
+/* ------ Tablets pequenos e celulares grandes (600px – 767px) ------ */
+@media (max-width: 767px) {
+    header {
+        padding: 12px 20px;
+    }
+
+    .logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .logo h1 {
+        font-size: 22px;
+    }
+
+    .nav {
+        display: none; /* some para não quebrar o header */
+    }
+
+    .perfil-info {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .banner img {
+        height: 180px;
+    }
+
+    .foto img {
+        width: 110px;
+        height: 110px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .projetos {
+        flex-direction: column;
+    }
+
+    .projeto-card {
+        width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 20px;
+    }
+}
+
+/* ------ Celulares médios (480px – 599px) ------ */
+@media (max-width: 599px) {
+
+    header {
+        padding: 12px 15px;
+    }
+
+    .status img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nome-header {
+        font-size: 14px;
+    }
+
+    .banner img {
+        height: 150px;
+    }
+
+    .banner button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    .dados h2 {
+        font-size: 20px;
+    }
+
+    .dados h3 {
+        font-size: 14px;
+    }
+
+    .tags span {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    .perfil-container {
+        margin: 10px;
+    }
+}
+
+/* ------ Celulares pequenos (até 420px) ------ */
+@media (max-width: 420px) {
+    header {
+        padding: 10px;
+    }
+
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo h1 {
+        font-size: 20px;
+    }
+
+    .status {
+        gap: 5px;
+    }
+
+    .status img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .perfil-info {
+        padding: 15px;
+    }
+
+    .dados h2 {
+        font-size: 18px;
+    }
+
+    .dados h3,
+    .localizacao,
+    .seguidores {
+        font-size: 12px;
+    }
+
+    .banner img {
+        height: 130px;
+    }
+
+    .projeto-card h4 {
+        font-size: 14px;
+    }
+
+    footer {
+        padding: 15px;
+    }
+}
+
+/* ------ Celulares muito pequenos (até 340px) ------ */
+@media (max-width: 340px) {
+    .dados h2 {
+        font-size: 16px;
+    }
+    .dados h3 {
+        font-size: 12px;
+    }
+    .banner img {
+        height: 110px;
+    }
+}

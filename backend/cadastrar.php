@@ -12,7 +12,6 @@
         exit();
     }
 
-    // Check if email already exists using prepared statement
     $checkSql = 'SELECT id FROM usuario WHERE email = ? LIMIT 1';
     if ($stmt = $conexao->prepare($checkSql)) {
         $stmt->bind_param('s', $email);
@@ -31,7 +30,6 @@
         exit();
     }
 
-    // Insert new user
     $hashed = password_hash($senha, PASSWORD_DEFAULT);
     $insertSql = 'INSERT INTO usuario (nome, email, senha) VALUES (?, ?, ?)';
     if ($stmt = $conexao->prepare($insertSql)) {

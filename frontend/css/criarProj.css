@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 *{
     box-sizing: border-box;
@@ -100,17 +101,27 @@ header{
     font-size: 14px;
 }
 
-.status{
-    display: block;
+.status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: row-reverse; 
+    margin-right: 30px;
 }
 
-.status img{
+.nome-header {
+    color: white;
+}
+
+
+.status img {
     width: 50px;
     height: 50px;
-    margin-left: 32px;
     object-fit: cover;
     border-radius: 100%;
+    margin: 0;
 }
+
 
 .status:hover{
     cursor: pointer;
@@ -125,6 +136,7 @@ header{
     position: absolute;
     background: var(--preto);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-left: -30px; /* ajuste fino */
 }
 
 .dropdown a{
@@ -328,4 +340,139 @@ footer{
 
 .fade-in{
     animation: fade 1s ease-out;
+}
+
+/*Responsividade*/
+
+
+
+/* ===========================
+   RESPONSIVIDADE GLOBAL
+   =========================== */
+
+/* ----- Tablets grandes (iPad Air, iPad 10", Android 10") ----- */
+@media (max-width: 1180px) {
+    header, footer {
+        padding: 12px 40px;
+    }
+
+    .nav {
+        margin-right: 40px;
+    }
+
+    .container {
+        margin: 2% 15%;
+    }
+}
+
+/* ----- iPad Mini / Tablets médios ----- */
+@media (max-width: 1024px) {
+    header, footer {
+        padding: 12px 30px;
+    }
+
+    .nav {
+        margin-right: 20px;
+        gap: 5px;
+    }
+
+    .container {
+        margin: 3% 10%;
+    }
+
+    .conteudo-container {
+        margin: 6% 5%;
+    }
+}
+
+/* ----- Tablets pequenos / celulares grandes (800px) ----- */
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .nav {
+        margin-right: 0;
+    }
+
+    .status {
+        margin-right: 0;
+    }
+
+    .container {
+        margin: 5% 8%;
+    }
+
+    .previsao {
+        flex-direction: column;
+    }
+}
+
+/* ----- Celulares grandes e médios ----- */
+@media (max-width: 768px) {
+    .container {
+        margin: 6% 5%;
+    }
+
+    header, footer {
+        padding: 12px 20px;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .logo h1 {
+        font-size: 23px;
+    }
+
+    .img {
+        height: 200px;
+    }
+
+    input[type="text"],
+    input[type="date"] {
+        font-size: 15px;
+        padding: 10px;
+    }
+}
+
+/* ----- Celulares médios ----- */
+@media (max-width: 600px) {
+    .container {
+        margin: 8% 4%;
+    }
+
+    .button button {
+        width: 100%;
+    }
+}
+
+/* ----- Celulares pequenos (Moto E, iPhone SE, etc.) ----- */
+@media (max-width: 480px) {
+    header {
+        padding: 16px;
+        text-align: center;
+    }
+
+    .logo h1 {
+        font-size: 20px;
+    }
+
+    .container {
+        margin: 10% 3%;
+    }
+
+    .img {
+        height: 170px;
+    }
+
+    .nav a {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
 }

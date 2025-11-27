@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         //Botao de Curtidas
 
-    const Likes = document.querySelectorAll('.like'); // Aqui eu pego todos os Elementos dentro da minha Classe e vira um array
+    const Likes = document.querySelectorAll('.like'); 
     Likes.forEach((likes) => { // vou percore esse meu array que eu fiz a constante likes receber
         const likeIcon = likes.querySelector('.like-icon'); //pegando o icone
         const contador = likes.querySelector('.like-count'); // pegando o contador

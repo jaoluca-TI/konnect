@@ -12,9 +12,7 @@ if (!$id_usuario) {
     exit;
 }
 
-// ==========================
-// GET – RETORNA PERFIL
-// ==========================
+
 if ($_SERVER["REQUEST_METHOD"] === "GET") {
     $sql = "SELECT * FROM perfil_usuario WHERE id_usuario = '$id_usuario'";
     $resultado = mysqli_query($conexao, $sql);
@@ -29,9 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
 }
 
 
-// ==========================
-// POST – SALVA PERFIL
-// ==========================
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     function sanitize($value) {
@@ -39,7 +34,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         return mysqli_real_escape_string($conexao, trim($value ?? ''));
     }
 
-    // Campos normais
     $nome = sanitize($_POST['nome'] ?? '');
     $titulo_profissional = sanitize($_POST['titulo_profissional'] ?? ($_POST['titulo'] ?? ''));
     $localizacao = sanitize($_POST['localizacao'] ?? '');
@@ -54,35 +48,30 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $habilidades = sanitize($_POST['habilidades'] ?? '');
     $disponibilidade_semanal = sanitize($_POST['disponibilidadeSemanal'] ?? '');
 
-    // Checkboxes
+  
     $interesses = isset($_POST['interesses']) ? sanitize(implode(', ', $_POST['interesses'])) : '';
     $colaboracao = isset($_POST['colaboracao']) ? sanitize(implode(', ', $_POST['colaboracao'])) : '';
     $compensacao = isset($_POST['compensacao']) ? sanitize(implode(', ', $_POST['compensacao'])) : '';
 
-    // Modal Projeto
+ 
     $projeto_titulo = sanitize($_POST['projetoTitulo'] ?? $_POST['projeto_titulo'] ?? '');
     $projeto_url = sanitize($_POST['projetoUrl'] ?? $_POST['projeto_url'] ?? '');
 
-    // Nome da imagem enviada no hidden
+   
     $projeto_imagem_nome = sanitize($_POST['projetoImagemNome'] ?? '');
 
-    // ==========================
-    // CONFIGURAÇÃO DE UPLOAD
-    // ==========================
-
-    // PASTA REAL ONDE AS IMAGENS VÃO FICAR
+  
     $uploadDir = $_SERVER['DOCUMENT_ROOT'] . "/konnect/img/";
 
     if (!is_dir($uploadDir)) {
         mkdir($uploadDir, 0777, true);
     }
 
-    // Função para salvar imagens
     function salvarImagem($inputName, $uploadDir) {
         if (!empty($_FILES[$inputName]['name'])) {
             $nome = time() . "_" . basename($_FILES[$inputName]['name']);
             move_uploaded_file($_FILES[$inputName]['tmp_name'], $uploadDir . $nome);
-            return $nome; // retorna somente o nome do arquivo
+            return $nome; 
         }
         return null;
     }
@@ -91,16 +80,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $banner = salvarImagem("banner", $uploadDir);
     $projeto_imagem = salvarImagem("projeto_imagem", $uploadDir);
 
-    // caso venha só o nome da imagem do modal
+   
     if (!$projeto_imagem && !empty($projeto_imagem_nome)) {
         if (file_exists($uploadDir . $projeto_imagem_nome)) {
             $projeto_imagem = $projeto_imagem_nome;
         }
     }
 
-    // ==========================
-    // UPDATE OU INSERT
-    // ==========================
 
     $sql_check = "SELECT id FROM perfil_usuario WHERE id_usuario = '$id_usuario'";
     $resultado = mysqli_query($conexao, $sql_check);

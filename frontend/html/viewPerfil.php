@@ -10,15 +10,14 @@ if (!$id_usuario) {
     exit;
 }
 
-// Buscar perfil do usuário
+
 $sql = "SELECT * FROM perfil_usuario WHERE id_usuario = '$id_usuario'";
 $resultado = mysqli_query($conexao, $sql);
 $perfil = mysqli_fetch_assoc($resultado);
 
-// Garantir que $perfil é array
+
 $perfil = is_array($perfil) ? $perfil : [];
 
-// Aplicar fallback caso não exista perfil SEM gerar warning
 $banner = !empty($perfil['banner']) ? "/konnect/img/" . $perfil['banner'] : "/konnect/img/bannerDefault.png";
 $foto = !empty($perfil['foto_perfil']) ? "/konnect/img/" . $perfil['foto_perfil'] : "/konnect/img/default.jpg";
 
@@ -43,11 +42,10 @@ $projeto_imagem = !empty($perfil['projeto_imagem']) ? "/konnect/img/" . $perfil[
 $projeto_titulo = $perfil['projeto_titulo'] ?? "";
 $projeto_url = $perfil['projeto_url'] ?? "";
 
-/* NOVO: disponibilidade semanal */
 $disponibilidade_semanal = $perfil['disponibilidade_semanal'] ?? "";
 
 
- $fotoPerfil = "/konnect/img/default.jpg"; // fallback
+ $fotoPerfil = "/konnect/img/default.jpg"; 
 
 if ($logado && isset($_SESSION['id'])) {
 
@@ -63,8 +61,11 @@ if ($logado && isset($_SESSION['id'])) {
             $fotoPerfil = "/konnect/img/" . $dados['foto_perfil'];
         }
     }
+    
 }
 
+
+$nomeUsuario = ($logado && !empty($perfil['nome'])) ? $perfil['nome'] : '';
 
 ?>
 <!DOCTYPE html>
@@ -80,41 +81,49 @@ if ($logado && isset($_SESSION['id'])) {
 </head>
 <body>
 
-<header class="header">
+   <header class="header">
         <div class="logo">
             <img src="/konnect/img/konnectIcon.png" alt="">
             <h1>onnect</h1>
         </div>
-                <nav class="nav fade-in">
-                    <a href="/konnect/frontend/html/home.php">Home</a>
-                    <a href="/konnect/frontend/html/proj.php">Projetos</a>
-                </nav>
+        <nav class="nav fade-in">
+            <a href="/konnect/frontend/html/home.php">Home</a>
+            <a href="/konnect/frontend/html/proj.php">Projetos</a>
+        </nav>
 
-            <?php if($logado): ?>
-                <div class="status">
-                    <img src="<?php echo $fotoPerfil; ?>" alt="perfil">
-                    <div class="dropdown">
-                        <a href="/konnect/frontend/html/viewPerfil.php">Ver Perfil</a>
-                        <a href="/konnect/backend/sair.php">Sair<i class="bi bi-box-arrow-in-right"></i></a>
-                    </div>
-                </div>
+        <?php if($logado): ?>
+            <div class="status">
+ 
+        <div class="foto-area">
+            <img src="<?php echo $fotoPerfil; ?>" alt="perfil" class="img-header">
 
-                <?php else: ?>
-                <div class="botoes fade-in">
-                    <a href="/konnect/frontend/html/login.php"><button id="botaoLogin">Login<i class="bi bi-box-arrow-in-right"></i></button></a>
-                </div>
-                <?php endif; ?>
+            <div class="dropdown">
+                <a href="/konnect/frontend/html/viewPerfil.php">Ver Perfil</a>
+                <a href="/konnect/backend/sair.php">Sair <i class="bi bi-box-arrow-in-right"></i></a>
+            </div>
+        </div>
+
+
+        <span class="nome-header">
+            <?php echo htmlspecialchars($nomeUsuario); ?>
+        </span>
+
+
+        <?php else: ?>
+            <div class="botoes fade-in">
+                <a href="/konnect/frontend/html/login.php"><button id="botaoLogin">Login<i class="bi bi-box-arrow-in-right"></i></button></a>
+            </div>
+            <?php endif; ?>
     </header>
 
 <main class="perfil-container fade-in">
 
-    <!-- Banner -->
+    
     <div class="banner">
         <img src="<?php echo $banner; ?>" alt="Banner do perfil">
         <a href="/konnect/frontend/html/profile.php"><button>Editar perfil</button></a>
     </div>
 
-    <!-- Informações principais -->
     <section class="perfil-info">
         <div class="foto">
             <img src="<?php echo $foto; ?>" alt="Foto de perfil">
@@ -134,7 +143,7 @@ if ($logado && isset($_SESSION['id'])) {
         </div>
     </section>
 
-    <!-- Redes sociais -->
+  
     <section class="redes">
         <h3>Redes e Contatos</h3>
         <div class="links">
@@ -145,13 +154,13 @@ if ($logado && isset($_SESSION['id'])) {
         </div>
     </section>
 
-    <!-- Biografia -->
+  
     <section class="biografia">
         <h3>Sobre mim</h3>
         <p><?php echo nl2br($bio); ?></p>
     </section>
 
-    <!-- Habilidades -->
+    
     <section class="habilidades">
         <h3>Habilidades e Ferramentas</h3>
         <div class="tags">
@@ -163,7 +172,7 @@ if ($logado && isset($_SESSION['id'])) {
         </div>
     </section>
 
-    <!-- Interesses -->
+   
     <section class="interesses">
         <h3>O que estou buscando</h3>
         <ul>
@@ -173,7 +182,7 @@ if ($logado && isset($_SESSION['id'])) {
         </ul>
     </section>
 
-    <!-- Projetos -->
+  
     <section class="portfolio">
         <h3>Projetos Recentes</h3>
 
@@ -196,7 +205,7 @@ if ($logado && isset($_SESSION['id'])) {
         <?php endif; ?>
     </section>
 
-    <!-- Preferências de colaboração -->
+ 
     <section class="preferencias">
         <h3>Forma de Trabalho</h3>
         <div class="opcoes">
@@ -206,7 +215,7 @@ if ($logado && isset($_SESSION['id'])) {
         </div>
     </section>
 
-    <!-- Compensação -->
+   
     <section class="compensacao">
         <h3>Tipo de Colaboração</h3>
         <div class="opcoes">
@@ -216,7 +225,6 @@ if ($logado && isset($_SESSION['id'])) {
         </div>
     </section>
 
-    <!-- === NOVA SEÇÃO ADICIONADA AQUI === -->
     <section class="disponibilidade-semanal">
         <h3>Disponibilidade semanal</h3>
 
@@ -226,7 +234,7 @@ if ($logado && isset($_SESSION['id'])) {
             <p>Não informado</p>
         <?php endif; ?>
     </section>
-    <!-- === FIM DA NOVA SEÇÃO === -->
+   
 
 </main>
 
@@ -234,6 +242,8 @@ if ($logado && isset($_SESSION['id'])) {
     <h1>konnect</h1>
     <p>&copy; 2025 konnect, Conectando pessoas para grandes ideias</p>
 </footer>
+
+    <script src="/konnect/frontend/js/viewPerfil.js"></script>
 
 </body>
 </html>

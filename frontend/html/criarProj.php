@@ -22,6 +22,23 @@ if ($logado && isset($_SESSION['id'])) {
     }
 }
 
+$perfil = [];
+
+if ($logado && isset($_SESSION['id'])) {
+
+    $id_usuario = $_SESSION['id'];
+
+    $sqlPerfil = "SELECT nome FROM perfil_usuario WHERE id_usuario = '$id_usuario' LIMIT 1";
+    $resPerfil = mysqli_query($conexao, $sqlPerfil);
+
+    if ($resPerfil && mysqli_num_rows($resPerfil) > 0) {
+        $perfil = mysqli_fetch_assoc($resPerfil);
+    }
+}
+
+
+$nomeUsuario = ($logado && !empty($perfil['nome'])) ? $perfil['nome'] : '';
+
 ?> 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -40,26 +57,32 @@ if ($logado && isset($_SESSION['id'])) {
             <img src="/konnect/img/konnectIcon.png" alt="">
             <h1>onnect</h1>
         </div>
-                <nav class="nav fade-in">
-                    <a href="/konnect/frontend/html/home.php">Home</a>
-                    <a href="/konnect/frontend/html/proj.php">Projetos</a>
-                </nav>
+        <nav class="nav fade-in">
+            <a href="/konnect/frontend/html/home.php">Home</a>
+            <a href="/konnect/frontend/html/proj.php">Projetos</a>
+        </nav>
              
+        <?php if($logado): ?>
+            <div class="status">
+                <div class="foto-area">
+                    <img src="<?php echo $fotoPerfil; ?>" alt="perfil" class="img-header">
 
-            <?php if($logado): ?>
-                <div class="status">
-                    <img src="<?php echo $fotoPerfil; ?>" alt="perfil">
-                    <div class="dropdown">
-                        <a href="/konnect/frontend/html/viewPerfil.php">Ver Perfil</a>
-                        <a href="/konnect/backend/sair.php">Sair<i class="bi bi-box-arrow-in-right"></i></a>
-                    </div>
+                <div class="dropdown">
+                    <a href="/konnect/frontend/html/viewPerfil.php">Ver Perfil</a>
+                    <a href="/konnect/backend/sair.php">Sair <i class="bi bi-box-arrow-in-right"></i></a>
                 </div>
+            </div>
 
-                <?php else: ?>
-                <div class="botoes fade-in">
-                    <a href="/konnect/frontend/html/login.php"><button id="botaoLogin">Login<i class="bi bi-box-arrow-in-right"></i></button></a>
-                </div>
-                <?php endif; ?>
+        <span class="nome-header">
+            <?php echo htmlspecialchars($nomeUsuario); ?>
+        </span>
+    </div>
+
+       <?php else: ?>
+            <div class="botoes fade-in">
+                <a href="/konnect/frontend/html/login.php"><button id="botaoLogin">Login<i class="bi bi-box-arrow-in-right"></i></button></a>
+            </div>
+        <?php endif; ?>
     </header>
 
     <form action="/konnect/backend/criarBack.php" method="POST" enctype="multipart/form-data">
@@ -67,13 +90,13 @@ if ($logado && isset($_SESSION['id'])) {
             <div class="conteudo-container fade-in">
                 <h1>Criar Novo Projeto</h1>
                 <p>Preencha os dados abaixo para cadastrar um novo projeto</p>
-          <label class="label fade-in">Imagem-projeto
-                    <div class="img fade-in" id="cont">
-                        <div class="icon" id="icon"><i class="bi bi-upload"></i></div>
+            <label class="label fade-in">Imagem-projeto
+                <div class="img fade-in" id="cont">
+                    <div class="icon" id="icon"><i class="bi bi-upload"></i></div>
                         <div class="texto-img" id="tex">Clique para fazer upload da imagem</div>
                         <input type="file" name="imagem" id="imagemCriar" accept="image/*">
                     </div>
-                </label>
+            </label>
 
                 <div class="nome fade-in ">
                     <label for="Nome do Projeto">Nome do Projeto</label>

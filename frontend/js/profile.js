@@ -259,6 +259,8 @@ formPerfil.addEventListener("submit", async (e) => {
 // Salvar Perfil
 const salvarMudancasBtn = document.getElementById("salvarMudancas");
 salvarMudancasBtn.onclick = function() {
+
+
     const mudancas = document.getElementById("mudancas");
     mudancas.textContent = "Alterações salvas com sucesso";
     mudancas.classList.add("clic");
@@ -268,4 +270,14 @@ salvarMudancasBtn.onclick = function() {
     }, 3000);
 
     formPerfil.requestSubmit();
+    // Salva notificação na sessionStorage antes de redirecionar
+    sessionStorage.setItem('notificacaoPerfil', 'Alterações salvas com sucesso');
+    window.location.href = "/konnect/frontend/html/viewPerfil.php";
+
+
+
+    
 };
+
+
+

@@ -1,11 +1,11 @@
 <?php
-    include '../../backend/status.php';
-    include __DIR__ . '/../../backend/conexao.php';
+include '../../backend/status.php';
+include __DIR__ . '/../../backend/conexao.php';
 
-$fotoPerfil = "/konnect/img/default.jpg"; // fallback
+
+$fotoPerfil = "/konnect/img/default.jpg";
 
 if ($logado && isset($_SESSION['id'])) {
-
     $id_usuario = $_SESSION['id'];
 
     $sqlFoto = "SELECT foto_perfil FROM perfil_usuario WHERE id_usuario = '$id_usuario'";
@@ -19,6 +19,25 @@ if ($logado && isset($_SESSION['id'])) {
         }
     }
 }
+
+
+$perfil = [];
+
+if ($logado && isset($_SESSION['id'])) {
+
+    $id_usuario = $_SESSION['id'];
+
+    $sqlPerfil = "SELECT nome FROM perfil_usuario WHERE id_usuario = '$id_usuario' LIMIT 1";
+    $resPerfil = mysqli_query($conexao, $sqlPerfil);
+
+    if ($resPerfil && mysqli_num_rows($resPerfil) > 0) {
+        $perfil = mysqli_fetch_assoc($resPerfil);
+    }
+}
+
+
+$nomeUsuario = ($logado && !empty($perfil['nome'])) ? $perfil['nome'] : '';
+
 ?> 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -37,25 +56,34 @@ if ($logado && isset($_SESSION['id'])) {
             <img src="/konnect/img/konnectIcon.png" alt="">
             <h1>onnect</h1>
         </div>
-                <nav class="nav fade-in">
-                    <a href="/konnect/frontend/html/home.php">Home</a>
-                    <a href="/konnect/frontend/html/proj.php">Projetos</a>
-                </nav>
+        <nav class="nav fade-in">
+            <a href="/konnect/frontend/html/home.php">Home</a>
+            <a href="/konnect/frontend/html/proj.php">Projetos</a>
+        </nav>
 
-            <?php if($logado): ?>
-                <div class="status">
-                    <img src="<?php echo $fotoPerfil; ?>" alt="perfil">
-                    <div class="dropdown">
-                        <a href="/konnect/frontend/html/viewPerfil.php">Ver Perfil</a>
-                        <a href="/konnect/backend/sair.php">Sair<i class="bi bi-box-arrow-in-right"></i></a>
-                    </div>
-                </div>
+        <?php if($logado): ?>
+            <div class="status">
+ 
+        <div class="foto-area">
+            <img src="<?php echo $fotoPerfil; ?>" alt="perfil" class="img-header">
 
-                <?php else: ?>
-                <div class="botoes fade-in">
-                    <a href="/konnect/frontend/html/login.php"><button id="botaoLogin">Login<i class="bi bi-box-arrow-in-right"></i></button></a>
-                </div>
-                <?php endif; ?>
+            <div class="dropdown">
+                <a href="/konnect/frontend/html/viewPerfil.php">Ver Perfil</a>
+                <a href="/konnect/backend/sair.php">Sair <i class="bi bi-box-arrow-in-right"></i></a>
+            </div>
+        </div>
+
+
+        <span class="nome-header">
+            <?php echo htmlspecialchars($nomeUsuario); ?>
+        </span>
+
+
+        <?php else: ?>
+            <div class="botoes fade-in">
+                <a href="/konnect/frontend/html/login.php"><button id="botaoLogin">Login<i class="bi bi-box-arrow-in-right"></i></button></a>
+            </div>
+            <?php endif; ?>
     </header>
 
     <div class="container fade-in">
@@ -72,13 +100,13 @@ if ($logado && isset($_SESSION['id'])) {
         </div>
 
             <div class="modal-conteudo" id="modal">
-                 <div class="close">
+                <div class="close">
                     <h1>Filtro</h1>
                     <span id="fechar">&times;</span>
                 </div>
             
             <div class="filtro-modal">
-                  <div class="filtro">
+                <div class="filtro">
                     <label id="tipoLabel"><i class="bi bi-layers"></i>Tipo de Projeto</label>
                      <select class="select" id="tipo">
                         <option value="">App</option>
@@ -139,10 +167,10 @@ if ($logado && isset($_SESSION['id'])) {
                     </select>
                 </div>
 
-                </div>
-                <div class="botao-limpar">
-                    <button id="limpar"><i class="bi bi-eraser"></i>Limpar Filtros</button>
-                </div>
+            </div>
+            <div class="botao-limpar">
+                <button id="limpar"><i class="bi bi-eraser"></i>Limpar Filtros</button>
+            </div>
             </div>
 
             </div>

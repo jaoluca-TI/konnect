@@ -1,57 +1,66 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const erro = document.getElementById("notificacaoError");
+    const erroEl = document.getElementById("notificacaoError");
 
-    if (erro) {
-        erro.style.display = "flex";
+    function mostrarNotificacaoErro(mensagem) {
+        if (!erroEl) return;
+        erroEl.hidden = false;
+        erroEl.innerHTML = `\n            <div class="icon">✖</div>\n            <span>${mensagem}</span>\n        `;
+
+        erroEl.classList.remove("entrada", "saida");
+        requestAnimationFrame(() => erroEl.classList.add("entrada"));
+
         setTimeout(() => {
-            erro.style.opacity = 0;
-            setTimeout(() => {
-                erro.style.display = "none";
-            }, 500);
-        }, 4000);
-    }
-});
+            erroEl.classList.remove("entrada");
+            erroEl.classList.add("saida");
+        }, 2500);
 
-document.addEventListener("DOMContentLoaded", () => {
-    const erro = document.getElementById("notificacaoError");
-
-    function mostrarNotificacao(mensagem, redirectUrl) {
-        erro.hidden = false;
-        erro.innerHTML = `
-            <div class="icon">✖</div>
-            <span>${mensagem}</span>
-        `;
-
-        // Força o estado inicial antes de animar
-        erro.classList.remove("entrada", "saida");
-
-        requestAnimationFrame(() => {
-            erro.classList.add("entrada");
-
-            // Sai após 2,5s
-            setTimeout(() => {
-                erro.classList.remove("entrada");
-                erro.classList.add("saida");
-            }, 2500);
-        });
-
-        // Depois que a animação terminar → redireciona
-        erro.addEventListener("transitionend", function end(e) {
+        erroEl.addEventListener("transitionend", function end(e) {
             if (e.propertyName !== "transform") return;
-            if (!erro.classList.contains("saida")) return;
+            if (!erroEl.classList.contains("saida")) return;
 
-            erro.hidden = true;
-            erro.classList.remove("saida");
-            erro.removeEventListener("transitionend", end);
+            erroEl.hidden = true;
+            erroEl.classList.remove("saida");
+            erroEl.removeEventListener("transitionend", end);
+        });
+    }
 
-            if (redirectUrl) {
-                window.location.assign(redirectUrl);
+    function redirecionarHome() {
+        // Apenas redireciona para a home — a notificação de sucesso é exibida lá pelo servidor
+        window.location.assign('/konnect/frontend/html/home.php');
+    }
+
+    // Se o servidor já deixou uma mensagem (render server-side), mostra-a
+    if (erroEl && erroEl.textContent.trim() !== '') {
+        mostrarNotificacaoErro(erroEl.textContent.trim());
+    }
+
+    // Intercepta o submit do formulário para usar fetch (AJAX)
+    const form = document.querySelector('form');
+    if (form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            try {
+                const resp = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                });
+
+                const data = await resp.json();
+                if (data.status === 'success') {
+                    redirecionarHome();
+                } else {
+                    mostrarNotificacaoErro(data.message || 'Erro no login');
+                }
+            } catch (err) {
+                mostrarNotificacaoErro('Erro interno.');
             }
         });
     }
 
-    // Exemplo: mostra ao carregar a página
-    // Ajuste para seu fluxo de login
-    mostrarNotificacao("Email ou senha inválidos!", "/konnect/frontend/html/login.php");
-
 });
+
+

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Se já está logado → vai para home
+
 if (isset($_SESSION['id'])) {
     header('Location: /konnect/frontend/html/home.php');
     exit();
@@ -22,11 +22,9 @@ unset($_SESSION['login_error']);
 <body>
     <div class="login-box">
 
-        <?php if ($login_error): ?>
-            <div class="notificacaoError" id="notificacaoError">
-                <?= htmlspecialchars($login_error) ?>
-            </div>
-        <?php endif; ?>
+        <div class="notificacaoError" id="notificacaoError" hidden>
+            <?php if ($login_error) echo htmlspecialchars($login_error); ?>
+        </div>
 
         <h1>konnect</h1>
         <form action="/konnect/backend/verificar.php" method="post">

@@ -13,7 +13,15 @@ $senha = $_POST['senha'] ?? '';
 
 // Validação
 if ($email === '' || $senha === '') {
-    $_SESSION['login_error'] = 'Preencha e-mail e senha.';
+    $msg = 'Preencha e-mail e senha.';
+    // Resposta AJAX
+    if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') {
+        header('Content-Type: application/json; charset=utf-8');
+        echo json_encode(['status' => 'error', 'message' => $msg]);
+        exit();
+    }
+
+    $_SESSION['login_error'] = $msg;
     header('Location: /konnect/frontend/html/login.php');
     exit();
 }
@@ -34,18 +42,43 @@ if ($stmt) {
             $_SESSION['nome'] = $usuario['nome'];
             $_SESSION['login_success'] = "success";
 
+            // Se for requisição AJAX, devolve JSON em vez de redirecionar
+            if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') {
+                header('Content-Type: application/json; charset=utf-8');
+                echo json_encode(['status' => 'success']);
+                exit();
+            }
+
             header('Location: /konnect/frontend/html/home.php');
             exit();
         } else {
-            $_SESSION['login_error'] = 'E-mail ou senha incorretos.';
+            $msg = 'E-mail ou senha incorretos.';
+            if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') {
+                header('Content-Type: application/json; charset=utf-8');
+                echo json_encode(['status' => 'error', 'message' => $msg]);
+                exit();
+            }
+            $_SESSION['login_error'] = $msg;
         }
     } else {
-        $_SESSION['login_error'] = 'O e-mail digitado não está cadastrado.';
+        $msg = 'O e-mail digitado não está cadastrado.';
+        if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') {
+            header('Content-Type: application/json; charset=utf-8');
+            echo json_encode(['status' => 'error', 'message' => $msg]);
+            exit();
+        }
+        $_SESSION['login_error'] = $msg;
     }
 
     $stmt->close();
 } else {
-    $_SESSION['login_error'] = 'Erro interno! Tente novamente.';
+    $msg = 'Erro interno! Tente novamente.';
+    if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') {
+        header('Content-Type: application/json; charset=utf-8');
+        echo json_encode(['status' => 'error', 'message' => $msg]);
+        exit();
+    }
+    $_SESSION['login_error'] = $msg;
 }
 
 // Caso dê erro, volta para login

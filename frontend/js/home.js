@@ -3,7 +3,7 @@ const botaoLogin = document.getElementById('botaoLogin');
 const fotoSalva = localStorage.getItem('fotoUsuario');
 
 if (fotoSalva && botaoLogin && areaBotao) {
-    // hide the login link when we have a saved profile picture
+    
     botaoLogin.style.display = 'none';
 
     const img = document.createElement('img');
@@ -19,44 +19,81 @@ if (fotoSalva && botaoLogin && areaBotao) {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    const sucesso = document.getElementById("notificacaoSucesso");
+    // Não mostrar notificação automaticamente; mostrar apenas se o servidor deixou
+    // o elemento `#notificacaoSucesso` (renderizado quando login foi bem-sucedido).
+    const sucessoEl = document.getElementById("notificacaoSucesso");
+    if (sucessoEl) {
+        // pega a mensagem do atributo data-msg (se houver)
+        const mensagem = sucessoEl.dataset.msg || 'Login realizado com sucesso';
 
-    function mostrarNotificacao(mensagem, redirectUrl) {
-        sucesso.hidden = false;
-        sucesso.innerHTML = `
-            <div class="icon">✓</div>
-            <span>${mensagem}</span>
-        `;
+        (function(){
+            let div = document.createElement('div');
+            div.className = 'notificacao notificacao-animada';
+            div.textContent = mensagem;
+            document.body.appendChild(div);
 
-        // Força o estado inicial antes de animar
-        sucesso.classList.remove("entrada", "saida");
+            // Força reflow para garantir que a animação será aplicada
+            void div.offsetWidth;
+            div.classList.add('entrada-cima');
 
-        requestAnimationFrame(() => {
-            sucesso.classList.add("entrada");
+            setTimeout(function() {
+                div.classList.remove('entrada-cima');
+                div.classList.add('saida-baixo');
+                setTimeout(function() {
+                    div.remove();
+                }, 900);
+            }, 3100);
+        })();
 
-            // Sai após 2,5s
-            setTimeout(() => {
-                sucesso.classList.remove("entrada");
-                sucesso.classList.add("saida");
-            }, 2500);
-        });
+        // Adiciona o CSS da animação (apenas quando necessário)
+        (function(){
+            if (document.getElementById('notificacao-animada-home')) return;
+            const style = document.createElement('style');
+            style.id = 'notificacao-animada-home';
+            style.innerHTML = `
+.notificacao-animada {
+    position: fixed;
+    top: 20px;
+    left: 20;
+    margin-top: 80px;
+    margin-left: 30px;
+    width: 390px;
+    background: #28a745;
+    color: #fff;
+    padding: 5px;
+    z-index: 9999;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 14px;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: none;
+}
+.notificacao-animada.entrada-cima {
+    animation: slideDownIn 0.9s cubic-bezier(.77,0,.18,1) forwards;
+}
+.notificacao-animada.saida-baixo {
+    animation: slideUpOut 0.9s cubic-bezier(.77,0,.18,1) forwards;
+}
+@keyframes slideDownIn {
+    0% { opacity: 0; transform: translateY(-100%); }
+    60% { opacity: 1; transform: translateY(10%); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideUpOut {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-100%); }
+}
+            `;
+            document.head.appendChild(style);
+        })();
 
-        // Depois que a animação terminar → redireciona
-        sucesso.addEventListener("transitionend", function end(e) {
-            if (e.propertyName !== "transform") return;
-            if (!sucesso.classList.contains("saida")) return;
-
-            sucesso.hidden = true;
-            sucesso.classList.remove("saida");
-            sucesso.removeEventListener("transitionend", end);
-
-            if (redirectUrl) {
-                window.location.assign(redirectUrl);
-            }
-        });
+        // oculta o marcador para evitar conflitos visuais
+        sucessoEl.style.display = 'none';
     }
-
-    // Exemplo: mostra ao carregar a página
-    // Ajuste para seu fluxo de login
-    mostrarNotificacao("Login realizado com sucesso!", "/konnect/frontend/html/home.php");
 });
+        
+
+
+
+
